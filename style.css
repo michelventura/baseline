@@ -1,15 +1,15 @@
 /*
-	Theme Name: Local Biz
-	Description: Local Biz is a starter theme created for the Spears Marketing.
+	Theme Name: Baseline
+	Description: Baseline is a starter theme for The Genesis Framework.
 	Author: Mike Hemberger
 	Author URI: http://thestizmedia.com/
-	Version: 1.0.1
- 
-	Tags: black, orange, white, one-column, two-columns, three-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
- 
+	Version: 1.0.0
+
+	Tags: black, starter, white, gray, one-column, two-columns, three-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+
 	Template: genesis
 	Template Version: 2.0.2
-	
+
 	License: GPL-2.0+
 	License URI: http://www.opensource.org/licenses/gpl-license.php
 */
@@ -84,6 +84,7 @@ input[type="search"] {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:    border-box;
 	box-sizing:         border-box;
+	 -webkit-appearance: none;
 }
 
 /* Float Clearing
@@ -152,6 +153,12 @@ textarea:focus,
 	-ms-transition:     all 0.1s ease-in-out;
 	-o-transition:      all 0.1s ease-in-out;
 	transition:         all 0.1s ease-in-out;
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: none;
 }
 
 ::-moz-selection {
@@ -504,15 +511,15 @@ Structure and Layout
 .one-fifth {
 	width: 17.9487179487179488%;
 }
- 
+
 .two-fifths {
 	width: 38.4615384615384616%;
 }
- 
+
 .three-fifths {
 	width: 58.9743589743589744%;
 }
- 
+
 .four-fifths {
 	width: 79.4871794871794872%;
 }
@@ -847,7 +854,7 @@ Site Header
 
 .site-title a,
 .site-title a:hover {
-	color: #333; 
+	color: #333;
 }
 
 .site-description {
@@ -1834,5 +1841,5 @@ Media Queries
 		background-size: 100%;
 		background-position: center top;
 	}
-	
-}	
+
+}
