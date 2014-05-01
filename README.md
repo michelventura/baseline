@@ -13,4 +13,4 @@
 
 ## Demo Website
 
-	* http://baseline.thestizmedia.com/
+	* <a href="http://baseline.thestizmedia.com/" title="Baseline">http://baseline.thestizmedia.com</a>
