@@ -84,7 +84,7 @@ input[type="search"] {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:    border-box;
 	box-sizing:         border-box;
-	 -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 /* Float Clearing
@@ -307,6 +307,11 @@ textarea:focus {
 	border: 1px solid #999;
 	outline: none;
 }
+
+.search-form input:focus::-webkit-input-placeholder { color: white; }
+.search-form input:focus:-moz-input-placeholder { color: white; }
+.search-form input:focus::-moz-input-placeholder { color: white; }
+.search-form input:focus:-ms-input-placeholder { color: white; }
 
 ::-moz-placeholder {
 	color: #999;
