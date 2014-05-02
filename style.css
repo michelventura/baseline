@@ -808,6 +808,10 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 
 /*Local SEO add-on*/
 
+#wpseo-directions-wrapper {
+	margin-top: 30px;
+}
+
 .wpseo-directions-submit {
 	margin-top: 10px;
 }
