@@ -1226,23 +1226,23 @@ Content Area
 /* Front Page
 --------------------------------------------- */
 
-.home-welcome .wrap,
+.home-top .wrap,
 .home-left-right .wrap,
 .home-middle .wrap {
 	padding: 0 16px;
 }
 
-.home-welcome {
+.home-top {
 	background: #ececec;
 	padding: 25px 0 25px;
 }
 
-.home-welcome .widget-title {
+.home-top .widget-title {
 	margin: 0;
 }
 
-.home-welcome,
-.home-welcome .widget-title {
+.home-top,
+.home-top .widget-title {
 	color: #444;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 40px;
