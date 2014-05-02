@@ -20,47 +20,47 @@ add_theme_support( 'custom-background' );
 add_theme_support( 'genesis-footer-widgets', 2 );
 
 //* Enqueue Javascript files
-add_action( 'wp_enqueue_scripts', 'localbiz_enqueue_scripts' );
-function localbiz_enqueue_scripts() {
-	wp_enqueue_script( 'localbiz-responsive-menu', get_stylesheet_directory_uri() . '/assets/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+add_action( 'wp_enqueue_scripts', 'baseline_enqueue_scripts' );
+function baseline_enqueue_scripts() {
+	wp_enqueue_script( 'baseline-responsive-menu', get_stylesheet_directory_uri() . '/assets/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 }
 
 //* Enqueue CSS files
-add_action( 'wp_enqueue_scripts', 'localbiz_enqueue_styles' );
-function localbiz_enqueue_styles() {
+add_action( 'wp_enqueue_scripts', 'baseline_enqueue_styles' );
+function baseline_enqueue_styles() {
 	wp_enqueue_style( 'google-font-roboto', '//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700,700italic|Roboto+Condensed:400,700', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'localbiz-responsive-menu-style', get_stylesheet_directory_uri() . '/assets/css/responsive-menu.css', array(), '1.0.0' );
+	wp_enqueue_style( 'baseline-responsive-menu-style', get_stylesheet_directory_uri() . '/assets/css/responsive-menu.css', array(), '1.0.0' );
 	wp_enqueue_style( 'dashicons' );
 }
 
-// Add new image size 
+// Add new image size
 add_image_size( 'one-half', 565, 275, TRUE );
 
 //* Register widget areas
 genesis_register_sidebar( array(
-	'id'          => 'home-welcome',
-	'name'        => __( 'Home Welcome', 'home-welcome' ),
-	'description' => __( 'This is the welcome widget that appears at the top of the front page', 'local-biz' ),
+	'id'          => 'home-top',
+	'name'        => __( 'Home Top', 'home-top' ),
+	'description' => __( 'This is the welcome widget that appears at the top of the front page', 'baseline' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-left',
 	'name'        => __( 'Home Left', 'home-left' ),
-	'description' => __( 'This is the home left widget area', 'local-biz' ),
+	'description' => __( 'This is the home left widget area', 'baseline' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-right',
 	'name'        => __( 'Home Right', 'home-right' ),
-	'description' => __( 'This is the home right widget area', 'local-biz' ),
+	'description' => __( 'This is the home right widget area', 'baseline' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-middle',
 	'name'        => __( 'Home Middle', 'home-middle' ),
-	'description' => __( 'This is the home middle widget area', 'local-biz' ),
+	'description' => __( 'This is the home middle widget area', 'baseline' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'after-entry',
-	'name'        => __( 'After Entry', 'local-biz' ),
-	'description' => __( 'This is the widget that appears after a single posts.', 'local-biz' ),
+	'name'        => __( 'After Entry', 'baseline' ),
+	'description' => __( 'This is the widget that appears after a single posts.', 'baseline' ),
 ) );
 
 //* Unregister layout settings
@@ -79,15 +79,15 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_before_footer', 'genesis_do_subnav', 5 );
 
 //* Customize the entry meta in the entry header
-add_filter( 'genesis_post_info', 'localbiz_post_info_filter' );
-function localbiz_post_info_filter($post_info) {
+add_filter( 'genesis_post_info', 'baseline_post_info_filter' );
+function baseline_post_info_filter($post_info) {
 	$post_info = '[post_date] [post_author_posts_link] [post_comments] [post_edit]';
 	return $post_info;
 }
 
 //* Hook after post widget after the entry content
-add_action( 'genesis_after_entry', 'lb_after_entry', 5 );
-function lb_after_entry() {
+add_action( 'genesis_after_entry', 'bl_after_entry', 5 );
+function bl_after_entry() {
 
 	if ( is_singular( 'post' ) )
 		genesis_widget_area( 'after-entry', array(
@@ -98,8 +98,8 @@ function lb_after_entry() {
 }
 
 // Change breadcrumb text/args
-add_filter( 'genesis_breadcrumb_args', 'child_breadcrumb_args' );
-function child_breadcrumb_args( $args ) {
+add_filter( 'genesis_breadcrumb_args', 'bl_breadcrumb_args' );
+function bl_breadcrumb_args( $args ) {
     $args['home']                    = 'Home';
     $args['sep']                     = ' <div class="dashicons dashicons-arrow-right-alt2"></div> ';
     $args['list_sep']                = ', '; // Genesis 1.5 and later
@@ -121,8 +121,8 @@ function child_breadcrumb_args( $args ) {
 }
 
 // Customize the credits
-add_filter( 'genesis_footer_creds_text', 'lb_custom_footer_creds_text' );
-function lb_custom_footer_creds_text() {
+add_filter( 'genesis_footer_creds_text', 'bl_custom_footer_creds_text' );
+function bl_custom_footer_creds_text() {
 ?>
     <div class="creds">
     	<p>Copyright &copy; <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> &middot; All Rights Reserved &middot; Website by <a href="#" title="Marketing Company">Marketing Company</a>
@@ -132,15 +132,15 @@ function lb_custom_footer_creds_text() {
 }
 
 // Change login logo
-add_action('login_head',  'lb_custom_dashboard_logo');
-function lb_custom_dashboard_logo() {
+add_action('login_head',  'bl_custom_dashboard_logo');
+function bl_custom_dashboard_logo() {
 
 	if ( 'image' === genesis_get_option( 'blog_title' ) ) {
 
 		echo '<style  type="text/css">
 			.login h1 a {
 			background-image:url('.get_stylesheet_directory_uri().'/images/logo.png)  !important;
-			background-size: 300px 123px  !important; 
+			background-size: 300px 123px  !important;
 			width: 300px  !important;
 			height: 123px  !important;
 			}
@@ -150,7 +150,7 @@ function lb_custom_dashboard_logo() {
 }
 
 // Change login link
-add_filter('login_headerurl','lb_loginpage_custom_link');
-function lb_loginpage_custom_link() {
+add_filter('login_headerurl','bl_loginpage_custom_link');
+function bl_loginpage_custom_link() {
 	return get_site_url();
 }
