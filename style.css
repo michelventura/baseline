@@ -1361,7 +1361,8 @@ Content Area
 }
 
 .entry-categories,
-.entry-tags {
+.entry-tags,
+.entry-terms {
 	display: block;
 }
 
@@ -1386,6 +1387,10 @@ Content Area
 
 /* Pagination
 --------------------------------------------- */
+
+.archive-pagination {
+	clear: both;
+}
 
 .archive-pagination,
 .entry-pagination {
