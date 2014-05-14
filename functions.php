@@ -30,11 +30,11 @@ add_action( 'wp_enqueue_scripts', 'baseline_enqueue_styles' );
 function baseline_enqueue_styles() {
 	wp_enqueue_style( 'google-font-roboto', '//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700,700italic|Roboto+Condensed:400,700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'baseline-responsive-menu-style', get_stylesheet_directory_uri() . '/assets/css/responsive-menu.css', array(), '1.0.0' );
-	wp_enqueue_style( 'dashicons' );
+	wp_enqueue_style( 'baseline-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
 }
 
 // Add new image size
-add_image_size( 'one-half', 565, 275, TRUE );
+// add_image_size( 'one-half', 565, 275, TRUE );
 
 //* Register widget areas
 genesis_register_sidebar( array(
