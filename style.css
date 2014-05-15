@@ -1311,6 +1311,10 @@ Content Area
 	width: 50%;
 }
 
+.single .wp-post-image {
+	margin-bottom: 16px;
+}
+
 .entry-meta {
 	color: #555;
 	font-size: 14px;
