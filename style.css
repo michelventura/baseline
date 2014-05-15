@@ -324,11 +324,29 @@ textarea:focus {
 	color: #999;
 }
 
+select {
+   -webkit-appearance: menulist;
+   -moz-appearance:    menulist;
+   appearance:         menulist;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
 	width: 20px;
 	margin: 0 0 3px 3px;
 	vertical-align: middle;
+	box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+   -webkit-appearance: checkbox;
+   -moz-appearance:    checkbox;
+   appearance:         checkbox;
+}
+input[type="radio"] {
+   -webkit-appearance: radio;
+   -moz-appearance:    radio;
+   appearance:         radio;
 }
 
 button,
@@ -344,6 +362,7 @@ input[type="submit"],
 	color: #fff;
 	cursor: pointer;
 	padding: 16px 24px;
+	text-align: center;
 	text-transform: uppercase;
 	width: auto;
 }
@@ -597,11 +616,13 @@ img.alignnone {
 	text-align: right;
 }
 
+.alignleft img,
 img.alignleft,
 .wp-caption.alignleft {
 	margin: 0 24px 24px 0;
 }
 
+.alignright img,
 img.alignright,
 .wp-caption.alignright {
 	margin: 0 0 24px 24px;
