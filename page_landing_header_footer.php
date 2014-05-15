@@ -9,12 +9,12 @@ Template Name: Landing Page - Header/Footer
 */
 
 //* Add custom body class to the head
-add_filter( 'body_class', 'localbiz_add_body_class' );
-function localbiz_add_body_class( $classes ) {
+add_filter( 'body_class', 'baseline_add_body_class' );
+function baseline_add_body_class( $classes ) {
 
-   $classes[] = 'localbiz-landing';
+   $classes[] = 'baseline-landing';
    return $classes;
-   
+
 }
 
 //* Force full width content layout

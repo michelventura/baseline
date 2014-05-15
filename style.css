@@ -423,7 +423,7 @@ Structure and Layout
 	overflow: hidden;
 }
 
-.localbiz-landing .site-inner {
+.baseline-landing .site-inner {
 	background-color: #fff;
 	border-radius: 3px;
 	margin: 80px auto;
@@ -432,7 +432,7 @@ Structure and Layout
 }
 
 
-.localbiz-landing h1 {
+.baseline-landing h1 {
 	text-align: center;
 	margin-bottom: 80px;
 }
@@ -878,17 +878,17 @@ Site Header
 	width: 100%;
 }
 
-.header-image .site-description,
-.header-image .site-title a {
-	display: block;
-	text-indent: -9999px;
-}
-
 /* Logo, hide text */
 
 .header-image .site-header .wrap {
 	background: url('images/logo.png') no-repeat left;
 	padding: 0;
+}
+
+.header-image .site-description,
+.header-image .site-title a {
+	display: block;
+	text-indent: -9999px;
 }
 
 .header-image .site-title a {
@@ -897,13 +897,17 @@ Site Header
 	width: 100%;
 }
 
+.header-image .site-description {
+	line-height: 0;
+}
+
 /* Logo and text Landing Pages */
 
-.localbiz-landing.header-image .site-header .wrap {
+.baseline-landing.header-image .site-header .wrap {
 	background-position: center;
 }
 
-.localbiz-landing .title-area {
+.baseline-landing .title-area {
 	float: none;
 	text-align: center;
 	margin: 0 auto;
