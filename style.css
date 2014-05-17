@@ -1135,6 +1135,7 @@ Site Navigation
 /* Primary Navigation
 --------------------------------------------- */
 
+.home .nav-primary .current-menu-item > a,
 .menu-toggle.primary-toggle,
 .nav-primary {
 	background-color: #252525;
