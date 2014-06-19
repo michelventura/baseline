@@ -1807,6 +1807,10 @@ Media Queries
 		width: 100%;
 	}
 
+	.site-header .widget-area {
+		margin: 10px 0;
+	}
+
 	nav {
 		display: block;
 	}
