@@ -7,21 +7,16 @@ jQuery(function( $ ){
       renaming: false,
     });
 
-	$('.page_item_has_children').children('.children').hide();
 	$('.menu-item-has-children').children('.sub-menu').hide();
 
-	$(".page_item_has_children").click(function(){
-		if (event.target !== this)
-		return;
-			$(this).children('.children').slideToggle(function() {
-			$(this).parent().toggleClass("menu-open");
-		});
-	});
 	$(".menu-item-has-children").click(function(){
-		if (event.target !== this)
-		return;
-			$(this).children('.sub-menu').slideToggle(function() {
-			$(this).parent().toggleClass("menu-open");
+		$('.menu-item').children('.sub-menu').hide();
+		$('.menu-item').removeClass('menu-open');
+		if (event.target !== this) {
+			return;
+		}
+		$(this).children('.sub-menu').slideToggle(function() {
+			$(this).parent().toggleClass('menu-open');
 		});
 	});
 

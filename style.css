@@ -1191,7 +1191,7 @@ Site Navigation
 	/*border-right: 1px solid rgba(0,0,0,0.2);*/
 }
 
-.nav-mobile-heading {
+.sidr-heading {
     /*text-align: center;*/
     background: rgba(0,0,0,0.3);
     padding: 8px;
@@ -1796,18 +1796,10 @@ Media Queries
 		width: 100%;
 	}
 
-	.site-header .widget-area {
-		display: none;
-	}
-
-	nav {
-		display: block;
-	}
-
-	.nav-primary,
-	.nav-secondary {
-		display: none;
-		visibility: hidden;
+	.site-title a {
+		background-size: 220px 63px;
+		width: 220px;
+		height: 63px;
 	}
 
 	#menu-toggle {
@@ -1821,7 +1813,21 @@ Media Queries
 		text-align: center;
 		background: #252525;
 		color: #fff;
-		margin: 28px 14px;
+		margin: 10px 14px;
+	}
+
+	.site-header .widget-area {
+		display: none;
+	}
+
+	nav {
+		display: block;
+	}
+
+	.nav-primary,
+	.nav-secondary {
+		display: none;
+		visibility: hidden;
 	}
 
 	.footer-widgets-1,
