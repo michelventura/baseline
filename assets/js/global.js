@@ -7,12 +7,9 @@ jQuery(function( $ ){
       renaming: false,
     });
 
-	$('.menu-item-has-children').children('.sub-menu').hide();
+	$('.sidr .menu-item-has-children').children('.sub-menu').hide();
 
-	$('.menu-item-has-children').click(function(){
-		if (event.target !== this) {
-			return;
-		}
+	$('.sidr .menu-item-has-children').click(function(){
 		$(this).children('.sub-menu').slideToggle(function() {
 			$(this).parent().toggleClass('menu-open');
 		});
