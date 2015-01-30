@@ -25,12 +25,4 @@ jQuery(function( $ ){
 		});
 	});
 
-	// $('.sidr-class-page_item_has_children::after').click(function(event){
-		// if (event.target !== this)
-		// return;
-			// $(this).find(".sidr-class-children").slideToggle(function() {
-			// $(this).parent().toggleClass("menu-open");
-		// });
-	// });
-
 });

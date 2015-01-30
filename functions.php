@@ -37,6 +37,8 @@ include_once('includes/remove.php');
 
 // Add new image size
 // add_image_size( 'one-half', 565, 275, TRUE );
+// add_image_size( 'one-third', 565, 275, TRUE );
+// add_image_size( 'one-four', 565, 275, TRUE );
 
 //* Activate After Entry widget area and display it on single posts
 add_theme_support( 'genesis-after-entry-widget-area' );
