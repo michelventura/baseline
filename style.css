@@ -431,7 +431,6 @@ Structure and Layout
 
 .site-inner,
 .wrap {
-	margin: 0 auto;
 	max-width: 1160px;
 }
 
@@ -442,6 +441,12 @@ Structure and Layout
 	overflow: hidden;
 }
 
+.home .site-inner {
+	background: transparent;
+	max-width: 100%;
+	margin: 0;
+}
+
 .baseline-landing .site-inner {
 	background-color: #fff;
 	border-radius: 3px;
@@ -450,6 +455,9 @@ Structure and Layout
 	padding: 40px;
 }
 
+.wrap {
+	margin: 0 auto;
+}
 
 .baseline-landing h1 {
 	text-align: center;
@@ -1048,7 +1056,8 @@ Site Navigation
 --------------------------------------------- */
 
 .nav-header {
-	margin-top: 8px;
+	float: right;
+	margin-top: 30px;
 }
 
 .nav-header a {
@@ -1182,17 +1191,14 @@ Site Navigation
 .sidr.right {
     left: auto;
     right: -260px;
-	/*border-left: 1px solid rgba(0,0,0,0.2);*/
 }
 
 .sidr.left {
     left: -260px;
     right: auto;
-	/*border-right: 1px solid rgba(0,0,0,0.2);*/
 }
 
 .sidr-heading {
-    /*text-align: center;*/
     background: rgba(0,0,0,0.3);
     padding: 8px;
     border-left: 10px solid rgba(0,0,0,0.6);
@@ -1244,7 +1250,6 @@ Site Navigation
     background: rgba(0,0,0,0.1);
 }
 
-.sidr .page_item_has_children::before,
 .sidr .menu-item-has-children::before {
 	display: block;
 	content: "\f107";
@@ -1259,18 +1264,15 @@ Site Navigation
 	z-index: 9999;
 }
 
-.sidr .page_item_has_children.menu-open::before,
 .sidr .menu-item-has-children.menu-open::before {
 	content: "\f106";
 }
 
-.sidr .page_item_has_children:hover::before,
 .sidr .menu-item-has-children:hover::before {
 	cursor: pointer;
 }
 
-.sidr .sub-menu,
-.sidr .children {
+.sidr .sub-menu {
 	background: rgba(0,0,0,0.1);
 }
 
@@ -1325,6 +1327,13 @@ Content Area
 /* Home / Front Page
 --------------------------------------------- */
 
+.home .section .wrap {
+	padding: 80px 15px;
+}
+
+.home .section.odd {
+	background: #fff;
+}
 
 /* Entries
 --------------------------------------------- */
@@ -1796,12 +1805,6 @@ Media Queries
 		width: 100%;
 	}
 
-	.site-title a {
-		background-size: 220px 63px;
-		width: 220px;
-		height: 63px;
-	}
-
 	#menu-toggle {
 		display: block;
 		visibility: visible;
@@ -1816,6 +1819,12 @@ Media Queries
 		margin: 10px 14px;
 	}
 
+	.site-title a {
+		background-size: 220px 63px;
+		width: 220px;
+		height: 63px;
+	}
+
 	.site-header .widget-area {
 		display: none;
 	}
@@ -1824,6 +1833,7 @@ Media Queries
 		display: block;
 	}
 
+	.nav-header,
 	.nav-primary,
 	.nav-secondary {
 		display: none;
