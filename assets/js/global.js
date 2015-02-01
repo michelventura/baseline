@@ -21,12 +21,12 @@
 			return 'false' === value ? 'true' : 'false';
 		});
 		// Add class to menu toggle when menu is dropped down
-		$this.toggleClass( 'activated' );
+		$this.toggleClass( 'menu-open' );
 		// Slide up or down the sub menu
 		$this.next( '.sub-menu' ).slideToggle();
 		// Find the closest top level menu item, then close the sub menu of all the siblings
 		var $others = $this.closest( '.menu-item' ).siblings();
-		$others.find( '.sub-menu-toggle' ).removeClass( 'activated' ).attr( 'aria-pressed', 'false' );
+		$others.find( '.sub-menu-toggle' ).removeClass( 'menu-open' ).attr( 'aria-pressed', 'false' );
 		$others.find( '.sub-menu' ).slideUp();
 	});
 

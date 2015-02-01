@@ -1284,14 +1284,13 @@ Site Navigation
 	border: none;
 	border-radius: none;
 	z-index: 9999;
-	outline: none;
 }
 
 .sidr .sub-menu-toggle:before {
 	content: "\f107";
 }
 
-.sidr .sub-menu-toggle.activated:before {
+.sidr .sub-menu-toggle.menu-open:before {
 	content: "\f106";
 }
 
