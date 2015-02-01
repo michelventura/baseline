@@ -1177,8 +1177,7 @@ Site Navigation
     height: 100%;
     z-index: 999999;
     width: 260px;
-    overflow-x: none;
-    overflow-y: auto;
+    overflow: hidden;
     font-size: 15px;
     background: #252525;
     color: #fff;
@@ -1198,6 +1197,18 @@ Site Navigation
     right: auto;
 }
 
+.sidr .menu-close,
+.sidr .menu-close:hover {
+	background: transparent;
+	color: #fff;
+	padding: 15px;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	text-decoration: none;
+	text-shadow: none;
+}
+
 .sidr-heading {
     background: rgba(0,0,0,0.3);
     padding: 8px;
@@ -1211,7 +1222,6 @@ Site Navigation
 }
 
 .sidr ul li {
-	/*position: relative;*/
     display: block;
     margin: 0;
 }
@@ -1286,8 +1296,8 @@ Site Navigation
 }
 
 .sidr form {
-	padding: 10px;
-	margin: 10px 0;
+	padding: 0 10px 5px;
+	margin: 0 0 10px;
 }
 
 .sidr input[type="search"] {
