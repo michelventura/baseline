@@ -7,7 +7,7 @@ add_action( 'genesis_before_footer', 'genesis_do_subnav', 5 );
 // Add mobile nav button
 add_action( 'genesis_header', 'tsm_do_menu_toggle' );
 function tsm_do_menu_toggle() {
-	echo '<a id="menu-toggle" href="#mobile-menu"><i class="fa fa-bars"></i></a>';
+	echo '<button id="menu-toggle" href="#mobile-menu"><i class="fa fa-bars"></i></button>';
 }
 
 // Add custom mobile menu
