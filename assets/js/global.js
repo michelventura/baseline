@@ -1,5 +1,14 @@
+(function(){
+    var c = document.body.className;
+    c = c.replace(/no-js/, 'js');
+    document.body.className = c;
+})();
+
 ( function ( document, $, undefined ) {
 	'use strict';
+
+	// Add menu toggle button
+	$( '.title-area' ).before( '<button id="menu-toggle" href="#mobile-menu" aria-pressed="false"><i class="fa fa-bars"></i></button>' ); // Add toggle to site-header
 
     $('#menu-toggle').sidr({
       name: 'sidr-right',
