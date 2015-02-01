@@ -16,6 +16,8 @@ function tsm_do_mobile_menu() {
 
 	echo '<nav id="mobile-menu" style="display:none;" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">';
 
+		echo '<button class="menu-close" role="button" aria-pressed="false"><i class="fa fa-times"></i> Close</button>';
+
 		echo get_search_form();
 
 		$header = array(
