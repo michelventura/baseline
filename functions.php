@@ -19,9 +19,9 @@ add_theme_support( 'genesis-footer-widgets', 2 );
 //* Enqueue Javascript files
 add_action( 'wp_enqueue_scripts', 'baseline_enqueue_scripts' );
 function baseline_enqueue_scripts() {
-	wp_enqueue_script( 'baseline-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '1.0.0', true );
 	// Sidr slide out menu
 	wp_enqueue_script( 'sidr',  get_stylesheet_directory_uri() . '/assets/js/jquery.sidr.min.js', array( 'jquery' ), '1.2.1', true );
+	wp_enqueue_script( 'baseline-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'sidr' ), '1.0.0', true );
 }
 
 //* Enqueue CSS files

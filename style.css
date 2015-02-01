@@ -1211,6 +1211,7 @@ Site Navigation
 }
 
 .sidr ul li {
+	/*position: relative;*/
     display: block;
     margin: 0;
 }
@@ -1225,6 +1226,7 @@ Site Navigation
 }
 
 .sidr ul li a {
+	/*position: relative;*/
 	font-size: 14px;
     text-transform: uppercase;
 }
@@ -1250,30 +1252,37 @@ Site Navigation
     background: rgba(0,0,0,0.1);
 }
 
-.sidr .menu-item-has-children::before {
+.sidr .menu-item-has-children {
+	position: relative;
+}
+
+.sidr .sub-menu-toggle {
 	display: block;
-	content: "\f107";
+	position: absolute;
 	font-family: FontAwesome;
 	float: right;
+	top: 0;
 	right: 0;
 	width: 42px;
 	height: 42px;
 	line-height: 42px;
 	vertical-align: middle;
 	text-align: center;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	border: none;
+	border-radius: none;
 	z-index: 9999;
+	outline: none;
 }
 
-.sidr .menu-item-has-children.menu-open::before {
+.sidr .sub-menu-toggle:before {
+	content: "\f107";
+}
+
+.sidr .sub-menu-toggle.activated:before {
 	content: "\f106";
-}
-
-.sidr .menu-item-has-children:hover::before {
-	cursor: pointer;
-}
-
-.sidr .sub-menu {
-	background: rgba(0,0,0,0.1);
 }
 
 .sidr form {
