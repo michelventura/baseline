@@ -31,6 +31,15 @@ function baseline_enqueue_styles() {
 	wp_enqueue_style( 'baseline-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
 }
 
+/**
+ * Add custom body class to the head
+ */
+add_filter( 'body_class', 'baseline_global_body_class' );
+function baseline_global_body_class( $classes ) {
+	$classes[] = 'no-js';
+	return $classes;
+}
+
 // Include our extra files to stay organized
 include_once('includes/navigation.php');
 include_once('includes/remove.php');
@@ -109,7 +118,7 @@ function tsm_custom_dashboard_logo() {
 			background-image:url('.get_stylesheet_directory_uri().'/images/logo.png)  !important;
 			background-size: 320px 82px !important;
 			width: 320px !important;
-			height: 82px !important;
+			height: 91px !important;
 		}
 	</style>';
 }

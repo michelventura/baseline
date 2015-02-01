@@ -1817,7 +1817,7 @@ Media Queries
 		width: 100%;
 	}
 
-	#menu-toggle {
+	.js #menu-toggle {
 		display: block;
 		visibility: visible;
 		float: right;
@@ -1842,13 +1842,13 @@ Media Queries
 		display: none;
 	}
 
-	nav {
+	.no-js nav {
 		display: block;
 	}
 
-	.nav-header,
-	.nav-primary,
-	.nav-secondary {
+	.js .nav-header,
+	.js .nav-primary,
+	.js .nav-secondary {
 		display: none;
 		visibility: hidden;
 	}
