@@ -1174,12 +1174,13 @@ Site Navigation
     position: fixed;
     top: 0;
     height: 100%;
-    z-index: 999999;
     width: 260px;
-    overflow: hidden;
-    font-size: 15px;
     background: #252525;
     color: #fff;
+    font-size: 15px;
+	overflow-x: hidden;
+	overflow-y: auto;
+    z-index: 999999;
 }
 
 .sidr .sidr-inner {
@@ -1828,6 +1829,7 @@ Media Queries
 		text-align: center;
 		background: #252525;
 		color: #fff;
+		padding: 0;
 		margin: 10px 14px;
 	}
 
