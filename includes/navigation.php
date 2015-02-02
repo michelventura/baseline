@@ -59,7 +59,7 @@ function baseline_sidr_testing() {
 }
 
 // Add the markup that sidr will populate with our menu(s)
-add_action( 'genesis_after_footer', 'baseline_do_mobile_nav_div' );
+add_action( 'genesis_after', 'baseline_do_mobile_nav_div' );
 function baseline_do_mobile_nav_div() {
 ?>
     <div id="mobile-menu">
