@@ -1171,16 +1171,16 @@ Site Navigation
 
 .sidr {
     display: none;
-    position: absolute;
     position: fixed;
     top: 0;
     height: 100%;
-    z-index: 999999;
     width: 260px;
-    overflow: hidden;
-    font-size: 15px;
     background: #252525;
     color: #fff;
+    font-size: 15px;
+	overflow-x: hidden;
+	overflow-y: auto;
+    z-index: 999999;
 }
 
 .sidr .sidr-inner {
@@ -1215,55 +1215,47 @@ Site Navigation
     border-left: 10px solid rgba(0,0,0,0.6);
 }
 
-.sidr ul {
+.sidr .menu {
     display: block;
     margin: 0;
     padding: 0;
 }
 
-.sidr ul li {
+.sidr .menu-item {
     display: block;
     margin: 0;
 }
 
-.sidr a {
+.sidr .menu-item a {
     display: block;
+    background: rgba(0,0,0,0.1);
     height: 42px;
     line-height: 42px;
     color: #fff;
+	font-size: 14px;
+    text-transform: uppercase;
     text-decoration: none;
 	padding: 0px 15px;
 }
 
-.sidr ul li a {
-	/*position: relative;*/
-	font-size: 14px;
-    text-transform: uppercase;
-}
-
-.sidr ul li ul li a {
-	font-size: 13px;
-	text-transform: capitalize;
-	padding-left: 15px;
-}
-
-.sidr ul li ul li a::before {
-	display: inline-block;
-	content: ' - ';
-	speak: none;
-	line-height: 1;
-	margin: -6px 8px 0 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	vertical-align: middle;
-}
-
-.sidr a:hover {
+.sidr .menu-item a:hover {
     background: rgba(0,0,0,0.1);
 }
 
 .sidr .menu-item-has-children {
 	position: relative;
+}
+
+.sidr .sub-menu a {
+    background: rgba(0,0,0,0.2);
+	font-size: 13px;
+	text-transform: capitalize;
+	padding-left: 30px;
+}
+
+.sidr .sub-menu .sub-menu a {
+    background: rgba(0,0,0,0.3);
+	padding-left: 45px;
 }
 
 .sidr .sub-menu-toggle {
@@ -1284,14 +1276,13 @@ Site Navigation
 	border: none;
 	border-radius: none;
 	z-index: 9999;
-	outline: none;
 }
 
 .sidr .sub-menu-toggle:before {
 	content: "\f107";
 }
 
-.sidr .sub-menu-toggle.activated:before {
+.sidr .sub-menu-toggle.menu-open:before {
 	content: "\f106";
 }
 
@@ -1818,7 +1809,7 @@ Media Queries
 		width: 100%;
 	}
 
-	#menu-toggle {
+	.js #menu-toggle {
 		display: block;
 		visibility: visible;
 		float: right;
@@ -1829,6 +1820,7 @@ Media Queries
 		text-align: center;
 		background: #252525;
 		color: #fff;
+		padding: 0;
 		margin: 10px 14px;
 	}
 
@@ -1842,13 +1834,13 @@ Media Queries
 		display: none;
 	}
 
-	nav {
+	.no-js nav {
 		display: block;
 	}
 
-	.nav-header,
-	.nav-primary,
-	.nav-secondary {
+	.js .nav-header,
+	.js .nav-primary,
+	.js .nav-secondary {
 		display: none;
 		visibility: hidden;
 	}

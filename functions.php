@@ -31,6 +31,30 @@ function baseline_enqueue_styles() {
 	wp_enqueue_style( 'baseline-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
 }
 
+//* Add id to .nav-primary
+// add_filter('genesis_attr_nav-primary', 'tsm_attributes_nav_id');
+// function tsm_attributes_nav_id($attributes) {
+	// $attributes['id'] .= 'primary-nav';
+	// return $attributes;
+// }
+
+// Since I removed the primary nav from after the header, I went ahead and added the wrap for sidr here
+// add_action( 'genesis_before_header', 'lookout_2015_primary_nav' );
+// function lookout_2015_primary_nav() {
+// 	echo '<div class="mobile-nav-container" id="primary-nav">';
+// 	genesis_do_nav();
+// 	echo '</div>';
+// }
+
+/**
+ * Add custom body class to the head
+ */
+add_filter( 'body_class', 'baseline_global_body_class' );
+function baseline_global_body_class( $classes ) {
+	$classes[] = 'no-js';
+	return $classes;
+}
+
 // Include our extra files to stay organized
 include_once('includes/navigation.php');
 include_once('includes/remove.php');
@@ -109,7 +133,7 @@ function tsm_custom_dashboard_logo() {
 			background-image:url('.get_stylesheet_directory_uri().'/images/logo.png)  !important;
 			background-size: 320px 82px !important;
 			width: 320px !important;
-			height: 82px !important;
+			height: 91px !important;
 		}
 	</style>';
 }
