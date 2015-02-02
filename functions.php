@@ -31,6 +31,21 @@ function baseline_enqueue_styles() {
 	wp_enqueue_style( 'baseline-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
 }
 
+//* Add id to .nav-primary
+// add_filter('genesis_attr_nav-primary', 'tsm_attributes_nav_id');
+// function tsm_attributes_nav_id($attributes) {
+	// $attributes['id'] .= 'primary-nav';
+	// return $attributes;
+// }
+
+// Since I removed the primary nav from after the header, I went ahead and added the wrap for sidr here
+// add_action( 'genesis_before_header', 'lookout_2015_primary_nav' );
+// function lookout_2015_primary_nav() {
+// 	echo '<div class="mobile-nav-container" id="primary-nav">';
+// 	genesis_do_nav();
+// 	echo '</div>';
+// }
+
 /**
  * Add custom body class to the head
  */
