@@ -219,6 +219,7 @@ blockquote::before {
 	content: "\f10d";
 	font-family: FontAwesome;
 	font-size: 36px;
+	-webkit-font-smoothing: antialiased;
 }
 
 .entry-content code {
@@ -228,6 +229,16 @@ blockquote::before {
 
 cite {
 	font-style: normal;
+}
+
+/* Accessibility
+--------------------------------------------- */
+
+.screen-reader-text {
+	clip: rect(0, 0, 0, 0);
+	height: 0;
+	position: absolute;
+	width: 0;
 }
 
 /* Headings
@@ -810,12 +821,17 @@ Plugins
 /* Gravity Forms
 --------------------------------------------- */
 
-div.gform_wrapper input[type="email"],
-div.gform_wrapper input[type="text"],
+
+div.gform_wrapper input[type=text],
+div.gform_wrapper input[type=url],
+div.gform_wrapper input[type=email],
+div.gform_wrapper input[type=tel],
+div.gform_wrapper input[type=number],
+div.gform_wrapper input[type=password],
 div.gform_wrapper textarea,
 div.gform_wrapper .ginput_complex label {
 	font-size: 16px;
-	padding: 16px;
+	padding: 12px 16px;
 }
 
 div.gform_wrapper .ginput_complex label {
@@ -956,6 +972,7 @@ Site Navigation
 	font-size: 10px;
 	vertical-align: middle;
 	padding-left: 6px;
+	-webkit-font-smoothing: antialiased;
 }
 
 .genesis-nav-menu .sub-menu {
@@ -987,7 +1004,7 @@ Site Navigation
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
-	margin: -58px 0 0 239px;
+	margin: -46px 0 0 239px;
 }
 
 .genesis-nav-menu .menu-item:hover {
@@ -1276,6 +1293,7 @@ Site Navigation
 	border: none;
 	border-radius: none;
 	z-index: 9999;
+	-webkit-font-smoothing: antialiased;
 }
 
 .sidr .sub-menu-toggle:before {
@@ -1838,6 +1856,10 @@ Media Queries
 		display: block;
 	}
 
+	.no-js .nav-header {
+		margin-top: 12px;
+	}
+
 	.js .nav-header,
 	.js .nav-primary,
 	.js .nav-secondary {
@@ -1850,6 +1872,37 @@ Media Queries
 		width: 100%;
 		text-align: center;
 		margin: 4px 0;
+	}
+
+	div.gform_wrapper .ginput_complex .ginput_left,
+	div.gform_wrapper .ginput_complex .ginput_right,
+	div.gform_wrapper .top_label .gf_left_half,
+	div.gform_wrapper .top_label .gf_right_half,
+	div.gform_wrapper .top_label input,
+	div.gform_wrapper .top_label select,
+	div.gform_wrapper .ginput_complex input[type=text],
+	div.gform_wrapper .ginput_complex input[type=url],
+	div.gform_wrapper .ginput_complex input[type=email],
+	div.gform_wrapper .ginput_complex input[type=tel],
+	div.gform_wrapper .ginput_complex input[type=number],
+	div.gform_wrapper .ginput_complex input[type=password],
+	div.gform_wrapper .ginput_complex select,
+	div.gform_wrapper .ginput_complex .ginput_left input[type=text],
+	div.gform_wrapper .ginput_complex .ginput_left input[type=url],
+	div.gform_wrapper .ginput_complex .ginput_left input[type=email],
+	div.gform_wrapper .ginput_complex .ginput_left input[type=tel],
+	div.gform_wrapper .ginput_complex .ginput_left input[type=number],
+	div.gform_wrapper .ginput_complex .ginput_left input[type=password],
+	div.gform_wrapper .ginput_complex .ginput_left select,
+	div.gform_wrapper .ginput_complex .ginput_right input[type=text],
+	div.gform_wrapper .ginput_complex .ginput_right input[type=url],
+	div.gform_wrapper .ginput_complex .ginput_right input[type=email],
+	div.gform_wrapper .ginput_complex .ginput_right input[type=tel],
+	div.gform_wrapper .ginput_complex .ginput_right input[type=number],
+	div.gform_wrapper .ginput_complex .ginput_right input[type=password],
+	div.gform_wrapper .ginput_complex .ginput_right select {
+		float: none;
+		width: 100% !important;
 	}
 
 }

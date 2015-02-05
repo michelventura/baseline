@@ -31,20 +31,32 @@ function baseline_enqueue_styles() {
 	wp_enqueue_style( 'baseline-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
 }
 
-//* Add id to .nav-primary
-// add_filter('genesis_attr_nav-primary', 'tsm_attributes_nav_id');
-// function tsm_attributes_nav_id($attributes) {
-	// $attributes['id'] .= 'primary-nav';
-	// return $attributes;
-// }
-
-// Since I removed the primary nav from after the header, I went ahead and added the wrap for sidr here
-// add_action( 'genesis_before_header', 'lookout_2015_primary_nav' );
-// function lookout_2015_primary_nav() {
-// 	echo '<div class="mobile-nav-container" id="primary-nav">';
-// 	genesis_do_nav();
-// 	echo '</div>';
-// }
+/**
+ * Filter Genesis favicon location and add touch icons
+ * @link http://realfavicongenerator.net/ to generate icons
+ */
+add_filter( 'genesis_pre_load_favicon', 'baseline_favicon_filter' );
+function baseline_favicon_filter( $favicon ) {
+?>
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/apple-touch-icon-57x57.png">
+	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/favicon-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="Shortcut Icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/favicon.png" type="image/x-icon">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/images/favicons/mstile-144x144.png">
+<?php
+}
 
 /**
  * Add custom body class to the head
@@ -131,7 +143,7 @@ function tsm_custom_dashboard_logo() {
 	echo '<style  type="text/css">
 		.login h1 a {
 			background-image:url('.get_stylesheet_directory_uri().'/images/logo.png)  !important;
-			background-size: 320px 82px !important;
+			background-size: 320px 91px !important;
 			width: 320px !important;
 			height: 91px !important;
 		}

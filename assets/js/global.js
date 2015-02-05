@@ -7,28 +7,37 @@
 ( function ( document, $, undefined ) {
 	'use strict';
 
-	// Main Navigation button
-	$( '.title-area' ).before( '<button id="menu-toggle" aria-label="Navigation Menu" aria-pressed="false"><i class="fa fa-bars"></i></button>' ); // Add toggle to site-header
+	// Main menu toggle button
+	$( '.title-area' ).after( '<button id="menu-toggle"><i class="fa fa-bars"></i><span class="screen-reader-text">Menu</span></button>' );
 
-	// Mobile navigation
-	$( '#menu-toggle' ).sidr( {
-		name: 'sidr-right',
+	// Initiate side menu
+	$( '#menu-toggle' ).sidr({
+		name: 'side-menu',
 		side: 'right',
-		source: '#mobile-menu',
 		renaming: false,
+		// displace: false,
+		onOpen: function() {
+			// Set aria-pressed is true
+			$( '#menu-toggle' ).attr( 'aria-pressed', function() {
+				return 'true';
+			});
+		},
+		onClose: function() {
+			// Set aria-pressed to false
+			$( '#menu-toggle' ).attr( 'aria-pressed', function() {
+				return 'false';
+			});
+		},
 	});
-
-	// Add navigation contents
-	$( '.sidr .sidr-append' ).after( BaselineVar.menu_open, BaselineVar.close, BaselineVar.search, BaselineVar.menu, BaselineVar.menu_close );
 
     // Hide all sub menus
 	$( '.sidr .menu-item-has-children' ).children( '.sub-menu' ).hide();
 
 	// Add a dropdown menu button
-	$( '.sidr .sub-menu' ).before( '<button class="sub-menu-toggle" role="button" aria-pressed="false" aria-label="Sub Navigation Menu"></button>' );
+	$( '.sidr .sub-menu' ).before( '<button class="sub-menu-toggle" role="button" aria-pressed="false" aria-label="Sub Menu Button"><span class="screen-reader-text">Sub Menu Button</span></button>' );
 
 	// Aria-pressed settings for buttons
-	$( '#menu-toggle, .menu-close, .sub-menu-toggle' ).on( 'click.menu-button', function() {
+	$( '.sub-menu-toggle' ).on( 'click.menu-button', function() {
 		var $this = $( this );
 		$this.attr( 'aria-pressed', function( index, value ) {
 			return 'false' === value ? 'true' : 'false';
@@ -38,28 +47,38 @@
 	// Show/hide submenus
 	$( '.sub-menu-toggle' ).on( 'click.sub-menu-button', function() {
 
+		// Set our variable for this button click
 		var $this = $( this );
+		// Aria-pressed settings for buttons
+		$this.attr( 'aria-pressed', function( index, value ) {
+			return 'false' === value ? 'true' : 'false';
+		});
+		// Toggle .menu-open class if open
 		$this.toggleClass( 'menu-open' );
-		$this.next( '.sub-menu, .sub-menu' ).slideToggle( 'fast' );
-
-		var $others = $this.closest( '.menu-item, .menu-item' ).siblings();
+		// Toggle .sub-menu
+		$this.next( '.sub-menu' ).slideToggle( 'fast' );
+		// Set our variable for other menu items
+		var $others = $this.closest( '.menu-item' ).siblings();
+		// Remove .menu-open class and slide up all sub-menus
 		$others.find( '.sub-menu-toggle' ).removeClass( 'menu-open' ).attr( 'aria-pressed', 'false' );
-		$others.find( '.sub-menu, .sub-menu' ).slideUp( 'fast' );
+		$others.find( '.sub-menu' ).slideUp( 'fast' );
 
 	});
 
 	// Close the navigation if close link is clicked
 	$( '.menu-close' ).on( 'click', function() {
 		var $this = $( this );
-		$this.attr( 'aria-pressed', function( index, value ) {
-			return 'false' === value ? 'true' : 'false';
+		$this.attr( 'aria-pressed', function() {
+			return 'false';
 		});
-		$.sidr('close','sidr-right');
+		$.sidr( 'close' , 'side-menu' );
 	});
 
 	// Close the menu if the window is resized larger
 	$( window ).resize( function() {
-		$.sidr( 'close', 'sidr-right' );
+		if( window.innerWidth > 800 ) {
+			$.sidr( 'close', 'side-menu' );
+		}
 	});
 
 })( this, jQuery );
