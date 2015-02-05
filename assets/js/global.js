@@ -15,6 +15,7 @@
 		name: 'side-menu',
 		side: 'right',
 		renaming: false,
+		// displace: false,
 		onOpen: function() {
 			// Set aria-pressed is true
 			$( '#menu-toggle' ).attr( 'aria-pressed', function() {
