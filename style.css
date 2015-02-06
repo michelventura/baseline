@@ -919,7 +919,6 @@ Site Header
 .site-header .widget-area {
 	float: right;
 	width: auto;
-	margin-top: 26px;
 }
 
 .site-header .search-form {
@@ -1028,7 +1027,7 @@ Site Navigation
 	display: inline-block;
 	float: right;
 	list-style-type: none;
-	padding: 20px 0;
+	padding: 14px 0;
 	text-transform: uppercase;
 }
 
@@ -1346,6 +1345,11 @@ Site Navigation
 	padding: 0;
 	position: absolute;
 	width: 1px;
+}
+
+.sidr li.right {
+	display: none;
+	visibility: hidden;
 }
 
 /*
