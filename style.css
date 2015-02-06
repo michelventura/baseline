@@ -1771,7 +1771,7 @@ Media Queries
 	}
 
 	.site-header .wrap {
-		padding: 15px 0;
+		padding: 15px 10px;
 	}
 
 	.sidebar .widget {
@@ -1843,7 +1843,7 @@ Media Queries
 		background: #252525;
 		color: #fff;
 		padding: 0;
-		margin: 10px 14px;
+		margin: 10px 0 10px 10px;
 	}
 
 	.site-title a {
