@@ -877,7 +877,6 @@ Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #fff;
 }
 
 .site-header .wrap {
@@ -919,7 +918,6 @@ Site Header
 .site-header .widget-area {
 	float: right;
 	width: auto;
-	margin-top: 26px;
 }
 
 .site-header .search-form {
@@ -945,7 +943,6 @@ Site Navigation
 
 .genesis-nav-menu {
 	clear: both;
-	font-family: 'Roboto Condensed', sans-serif;
 	line-height: 1.5;
 	width: 100%;
 }
@@ -1028,7 +1025,7 @@ Site Navigation
 	display: inline-block;
 	float: right;
 	list-style-type: none;
-	padding: 20px 0;
+	padding: 14px 0;
 	text-transform: uppercase;
 }
 
@@ -1043,11 +1040,11 @@ Site Navigation
 
 .genesis-nav-menu > .search {
 	width: 200px;
-	padding: 11px 0 0;
+	padding: 7px 0 0;
 }
 
 .genesis-nav-menu > .search input {
-	padding: 10px 16px 12px;
+	padding: 8px 16px 8px;
 	border-radius: 1px;
 	border: none;
 }
@@ -1346,6 +1343,11 @@ Site Navigation
 	padding: 0;
 	position: absolute;
 	width: 1px;
+}
+
+.sidr li.right {
+	display: none;
+	visibility: hidden;
 }
 
 /*
@@ -1767,7 +1769,7 @@ Media Queries
 	}
 
 	.site-header .wrap {
-		padding: 15px 0;
+		padding: 15px 10px;
 	}
 
 	.sidebar .widget {
@@ -1839,7 +1841,7 @@ Media Queries
 		background: #252525;
 		color: #fff;
 		padding: 0;
-		margin: 10px 14px;
+		margin: 10px 0 10px 10px;
 	}
 
 	.site-title a {
