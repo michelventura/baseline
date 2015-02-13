@@ -71,10 +71,10 @@ function baseline_global_body_class( $classes ) {
 include_once('includes/navigation.php');
 include_once('includes/remove.php');
 
-// Add new image size 5 x 7 ration
-// add_image_size( 'one-half', 565, 404, TRUE );
-// add_image_size( 'one-third', 365, 261, TRUE );
-// add_image_size( 'one-four', 265, 189, TRUE );
+// Add new image size 4 x 3 ratio
+add_image_size( 'one-half', 565, 424, TRUE );
+add_image_size( 'one-third', 365, 274, TRUE );
+add_image_size( 'one-fourth', 275, 206, TRUE );
 
 //* Activate After Entry widget area and display it on single posts
 add_theme_support( 'genesis-after-entry-widget-area' );
