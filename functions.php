@@ -142,10 +142,10 @@ add_action('login_head',  'tsm_custom_dashboard_logo');
 function tsm_custom_dashboard_logo() {
 	echo '<style  type="text/css">
 		.login h1 a {
-			background-image:url('.get_stylesheet_directory_uri().'/images/logo.png)  !important;
-			background-size: 320px 91px !important;
-			width: 320px !important;
-			height: 91px !important;
+			background-image:url(' . get_stylesheet_directory_uri() . '/images/logo@2x.png)  !important;
+			background-size: 300px auto !important;
+			width: 100% !important;
+			height: 120px !important;
 		}
 	</style>';
 }
