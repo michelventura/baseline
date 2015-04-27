@@ -1874,7 +1874,6 @@ Media Queries
 		margin: 4px 0;
 	}
 
-	div.gform_wrapper textarea.medium,
 	div.gform_wrapper .ginput_complex .ginput_left,
 	div.gform_wrapper .ginput_complex .ginput_right,
 	div.gform_wrapper .top_label .gf_left_half,
@@ -1901,13 +1900,20 @@ Media Queries
 	div.gform_wrapper .ginput_complex .ginput_right input[type=tel],
 	div.gform_wrapper .ginput_complex .ginput_right input[type=number],
 	div.gform_wrapper .ginput_complex .ginput_right input[type=password],
-	div.gform_wrapper .ginput_complex .ginput_right select,
-	div.gform_wrapper .ginput_complex.ginput_container.has_first_name.no_middle_name.has_last_name span,
-	div.gform_wrapper .ginput_complex.ginput_container.no_first_name.has_middle_name.has_last_name span,
-	div.gform_wrapper .ginput_complex.ginput_container.has_first_name.has_middle_name.no_last_name span {
-		float: none !important;
+	div.gform_wrapper .ginput_complex .ginput_right select {
+		float: none;
 		width: 100% !important;
-		margin: 0 !important;
+	}
+
+	div.gform_wrapper .ginput_complex .ginput_left,
+	div.gform_wrapper .ginput_complex .ginput_right {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	div.gform_wrapper input.datepicker.datepicker_with_icon,
+	div.gform_wrapper li.gfield ul.gfield_radio li input[type=radio]+input[type=text] {
+		width: auto !important;
 	}
 
 }
