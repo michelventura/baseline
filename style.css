@@ -430,6 +430,37 @@ td {
 	padding: 6px 0;
 }
 
+.table-table {
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.table-tr {
+	display: table-row;
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.table-tr:first-of-type {
+	border-bottom: 0;
+}
+
+.table-th,
+.table-td {
+	display: table-cell;
+}
+
+.table-th {
+	background-color: rgba(0,0,0,0.05);
+	font-weight: bold;
+	padding: 12px 20px;
+}
+
+.table-td {
+	padding: 8px 20px;
+}
 
 /*
 Structure and Layout
