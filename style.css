@@ -972,23 +972,25 @@ Site Header
 	margin: 0;
 }
 
-/* Widget Area
+/* Header Content
 --------------------------------------------- */
 
-.widget-area {
-	word-wrap: break-word;
-}
-
-.site-header .widget-area {
+.header-content {
+	display: inline-block;
 	float: right;
-	width: auto;
 }
 
 .site-header .search-form {
 	float: right;
-	margin-top: 24px;
+	margin: 20px 0;
 }
 
+.site-header .search-form input {
+	display: inline;
+	width: 222px;
+	border: none;
+	border-radius: 0;
+}
 
 /*
 Site Navigation
