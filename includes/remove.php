@@ -12,8 +12,8 @@ unregister_sidebar( 'sidebar-alt' );
 add_filter ( 'genesis_edit_post_link' , '__return_false' );
 
 // Remove Blog & Archive Template From Genesis
-add_filter( 'theme_page_templates', 'jivedig_remove_page_templates' );
-function jivedig_remove_page_templates( $templates ) {
+add_filter( 'theme_page_templates', 'baseline_remove_page_templates' );
+function baseline_remove_page_templates( $templates ) {
 	unset( $templates['page_blog.php'] );
 	unset( $templates['page_archive.php'] );
 	return $templates;
