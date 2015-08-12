@@ -1148,6 +1148,7 @@ Site Navigation
 
 .nav-header a:hover,
 .nav-header .current-menu-item > a,
+.nav-header .menu-item-has-children:hover > a,
 .nav-header .sub-menu .current-menu-item > a:hover {
 	border-bottom: 1px solid #252525;
 }
@@ -1187,6 +1188,7 @@ Site Navigation
 
 .nav-primary a:hover,
 .nav-primary .current-menu-item > a,
+.nav-primary .menu-item-has-children:hover > a,
 .nav-primary .sub-menu .current-menu-item > a:hover {
 	background: #111;
 	color: #fff;
@@ -1226,6 +1228,7 @@ Site Navigation
 
 .nav-secondary a:hover,
 .nav-secondary .current-menu-item > a,
+.nav-secondary .menu-item-has-children:hover > a,
 .nav-secondary .sub-menu .current-menu-item > a:hover {
 	background: #111;
 	color: #fff;
