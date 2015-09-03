@@ -18,3 +18,6 @@ function baseline_remove_page_templates( $templates ) {
 	unset( $templates['page_archive.php'] );
 	return $templates;
 }
+
+// Disable the Genesis Favicon
+remove_action( 'wp_head', 'genesis_load_favicon' );
