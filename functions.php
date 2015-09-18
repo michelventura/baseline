@@ -5,13 +5,16 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
-define( 'CHILD_THEME_VERSION', '2.0.8' );
+define( 'CHILD_THEME_VERSION', '2.0.9' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
 
 // Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
+
+// Add Accessibility support
+add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu',  'search-form', 'skip-links' ) );
 
 // Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 2 );
