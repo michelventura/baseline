@@ -5,7 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
-define( 'CHILD_THEME_VERSION', '2.0.9' );
+define( 'CHILD_THEME_VERSION', '2.1.0' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
@@ -15,9 +15,6 @@ add_theme_support( 'genesis-responsive-viewport' );
 
 // Add Accessibility support
 add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu',  'search-form', 'skip-links' ) );
-
-// Add support for 3-column footer widgets
-add_theme_support( 'genesis-footer-widgets', 2 );
 
 // Enqueue Javascript files
 add_action( 'wp_enqueue_scripts', 'baseline_enqueue_scripts' );
@@ -31,7 +28,7 @@ function baseline_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'baseline_enqueue_styles' );
 function baseline_enqueue_styles() {
 	wp_enqueue_style( 'baseline-google-fonts', '//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700,700italic|Roboto+Condensed:400,700', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), '4.4.0' );
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0' );
 }
 
 /**
@@ -47,9 +44,7 @@ function baseline_global_body_class( $classes ) {
 include_once('includes/images.php');
 include_once('includes/navigation.php');
 include_once('includes/remove.php');
-
-// Activate After Entry widget area and display it on single posts
-add_theme_support( 'genesis-after-entry-widget-area' );
+include_once('includes/widgetize.php');
 
 // Customize the entry meta in the entry header
 add_filter( 'genesis_post_info', 'baseline_post_info_filter' );
@@ -76,8 +71,7 @@ add_filter( 'genesis_footer_creds_text', 'tsm_custom_footer_creds_text' );
 function tsm_custom_footer_creds_text() {
 ?>
     <div class="creds">
-    	<p>Copyright &copy; <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> &middot; All Rights Reserved &middot; Website by <a href="http://thestizmedia.com" title="The Stiz Media, LLC">The Stiz Media, LLC</a>
-		</p>
+    	<p>Copyright &copy; <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> &middot; All Rights Reserved &middot; Website by <a rel="nofollow" href="http://thestizmedia.com" title="The Stiz Media, LLC">The Stiz Media, LLC</a></p>
 	</div>
 <?php
 }

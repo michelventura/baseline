@@ -3,7 +3,7 @@
 	Description: Baseline is a starter theme for The Genesis Framework.
 	Author: Mike Hemberger
 	Author URI: http://thestizmedia.com/
-	Version: 2.0.9
+	Version: 2.1.0
 
 	Template: genesis
 	Template Version: 2.0.2
@@ -37,8 +37,6 @@
 		- Featured Content
 	- Plugins
 		- Genesis eNews Extended
-		- Genesis Simple Share
-		- Genesis Latest Tweets
 		- Gravity Forms
 		- Jetpack
 	- Site Header
@@ -783,7 +781,7 @@ img.alignright,
 	background: #dfdfdf;
 	color: #969696;
 	font-size: 14px;
-	padding: 9px 14px;
+	padding: 9px 3%;
 }
 
 .breadcrumb a {
@@ -797,7 +795,7 @@ img.alignright,
 }
 
 .archive-description {
-	padding: 40px 40px 24px;
+	padding: 3%;
 }
 
 .author-box {
@@ -857,8 +855,6 @@ img.alignright,
 }
 
 .archive-title {
-	font-size: 20px;
-	margin-bottom: 24px;
 }
 
 
@@ -866,22 +862,6 @@ img.alignright,
 Widgets
 ---------------------------------------------------------------------------------------------------- */
 
-/* Featured Content
---------------------------------------------- */
-
-.featured-content .entry {
-	padding: 0 0 24px;
-}
-
-.featured-content .entry-title {
-	border: none;
-	font-size: 24px;
-	line-height: 1.2;
-}
-
-.featured-content .entry-title a {
-	border: none;
-}
 
 /*
 Plugins
@@ -913,20 +893,6 @@ Plugins
 
 .enews-widget input:hover[type="submit"] {
 	background-color: #333;
-}
-
-/* Genesis Simple Share
---------------------------------------------- */
-
-.share-before {
-	margin-bottom: 10px;
-}
-
-/* Genesis Latest Tweets
---------------------------------------------- */
-
-.latest-tweets ul li {
-	margin-bottom: 16px;
 }
 
 /* Gravity Forms
@@ -1487,7 +1453,11 @@ Content Area
 .entry,
 .after-entry.widget-area {
 	margin-bottom: 40px;
-	padding: 30px;
+	padding: 3%;
+}
+
+.entry-content {
+	overflow: hidden;
 }
 
 .entry-content a {
@@ -1729,8 +1699,6 @@ Sidebars
 .sidebar {
 	background-color: #ececec;
 	color: #686868;
-	margin-bottom: -9999px;
-	padding: 0 0 9999px;
 }
 
 .sidebar p:last-child {
@@ -1748,7 +1716,7 @@ Sidebars
 }
 
 .sidebar .widget {
-	padding: 40px;
+	padding: 4%;
 }
 
 .sidebar .enews-widget {
@@ -1771,22 +1739,11 @@ Footer Widgets
 	padding: 20px 16px;
 }
 
-.footer-widgets-1,
-.footer-widgets-2 {
-	width: 49%;
-}
-
-.footer-widgets-1 {
-	margin-right: 2%;
-}
-
-.footer-widgets-1 {
-	float: left;
-}
-
-.footer-widgets-2 {
-	float: right;
-	text-align: right;
+.footer-widgets .widget-area {
+	display: inline-block;
+	width: 25%;
+	padding: 3%;
+	vertical-align: top;
 }
 
 .footer-widgets a {
@@ -1824,7 +1781,7 @@ Site Footer
 	background-color: #2a2a2a;
 	color: #999;
 	font-size: 14px;
-	padding: 40px 16px;
+	padding: 40px 3%;
 	text-align: center;
 }
 
@@ -1884,10 +1841,6 @@ Media Queries
 		width: 100%;
 	}
 
-	.sidebar .widget {
-		padding: 30px;
-	}
-
 	.genesis-nav-menu li,
 	.site-header ul.genesis-nav-menu,
 	.site-header .search-form {
@@ -1905,18 +1858,6 @@ Media Queries
 	.entry-footer .entry-meta {
 		margin: 0;
 		padding-top: 12px;
-	}
-
-	.sidebar .widget.enews-widget {
-		padding: 40px;
-	}
-
-	.site-footer {
-		padding: 24px 0;
-	}
-
-	.footer-widgets-1 {
-		margin: 0;
 	}
 
 }
@@ -1981,11 +1922,8 @@ Media Queries
 		visibility: hidden;
 	}
 
-	.footer-widgets-1,
-	.footer-widgets-2 {
-		width: 100%;
-		text-align: center;
-		margin: 4px 0;
+	.footer-widgets .widget-area {
+		width: 50%;
 	}
 
 	div.gform_wrapper textarea.medium,
@@ -2035,5 +1973,8 @@ Media Queries
 
 @media only screen and (max-width: 400px) {
 
+	.footer-widgets .widget-area {
+		width: 100%;
+	}
 
 }

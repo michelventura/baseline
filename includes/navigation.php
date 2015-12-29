@@ -10,7 +10,7 @@ function baseline_register_header_nav() {
 add_action( 'genesis_header', 'baselines_do_header_nav', 12 );
 function baselines_do_header_nav() {
 	echo '<div class="header-content">';
-		echo get_search_form();
+		// echo get_search_form();
 		genesis_nav_menu( array( 'theme_location' => 'header' ) );
 	echo '</div>';
 }
