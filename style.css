@@ -1234,6 +1234,9 @@ Site Navigation
 
 .nav-primary a {
 	color: #555;
+	font-size: 15px;
+	padding: 10px 16px;
+	text-transform: capitalize;
 }
 
 .nav-primary a:hover,
