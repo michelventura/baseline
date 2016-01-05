@@ -128,7 +128,7 @@ Defaults
 --------------------------------------------- */
 
 body {
-	background-color: #f5f5f5;
+	background-color: #e4e4e4;
 	color: #333;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
@@ -521,30 +521,36 @@ Structure and Layout
 /* Site Containers
 --------------------------------------------- */
 
-.site-inner,
-.wrap {
-	max-width: 1160px;
+.site-container {
+	position: relative; /* very important since .site-header is absolute! */
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 220px; /* must match .site-header width */
+	overflow: hidden; /* keeps .site-header from being huge */
+}
+
+.site-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 220px;
+	padding-bottom: 9999px;
+	margin-bottom: -9999px;
 }
 
 .site-inner {
 	clear: both;
 	background-color: #fff;
-	margin: 40px auto;
+	margin: 0 auto;
 	overflow: hidden;
 }
 
-.home .site-inner {
-	background: transparent;
-	max-width: 100%;
-	margin: 0;
-}
-
 .baseline-landing .site-inner {
-	background-color: #fff;
-	border-radius: 3px;
-	margin: 80px auto;
-	max-width: 960px;
-	padding: 40px;
+	/*background-color: #fff;*/
+	/*border-radius: 3px;*/
+	/*margin: 80px auto;*/
+	/*max-width: 960px;*/
+	/*padding: 40px;*/
 }
 
 .wrap {
@@ -565,7 +571,7 @@ Structure and Layout
 
 .content {
 	float: right;
-	width: 800px;
+	width: 70%;
 }
 
 .content-sidebar .content {
@@ -576,14 +582,16 @@ Structure and Layout
 	width: 100%;
 }
 
-/* Primary Sidebar */
+/* Sidebar */
 
-.sidebar-primary {
+.sidebar {
 	float: right;
-	width: 360px;
+	width: 30%;
+	padding-bottom: 9999px;
+	margin-bottom: -9999px
 }
 
-.sidebar-content .sidebar-primary {
+.sidebar-content .sidebar {
 	float: left;
 }
 
@@ -954,6 +962,7 @@ Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
+	background-color: #333;
 }
 
 .site-header .wrap {
@@ -964,7 +973,7 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
-	float: left;
+	text-align: center;
 }
 
 .site-title {
@@ -973,10 +982,26 @@ Site Header
 
 .site-title a {
 	display: block;
-	background: url(images/logo.png) no-repeat;
-	width: 350px;
-	height: 100px;
-	text-indent: -9999px;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 40px;
+	font-weight: 300;
+	/*background: url(images/logo.png) no-repeat;*/
+	/*width: 180px;*/
+	/*height: 100px;*/
+	/*text-indent: -9999px;*/
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-moz-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5) {
+
+	.site-title a {
+		/*background: url('images/logo@2x.png') no-repeat left;*/
+		/*background-size: contain;*/
+	}
+
 }
 
 .site-description {
@@ -989,12 +1014,9 @@ Site Header
 --------------------------------------------- */
 
 .header-content {
-	display: inline-block;
-	float: right;
 }
 
 .site-header .search-form {
-	float: right;
 	margin: 20px 0;
 }
 
@@ -1149,25 +1171,40 @@ Site Navigation
 --------------------------------------------- */
 
 .nav-header {
-	float: right;
 	margin-top: 30px;
 }
 
+.nav-header .menu-item {
+	display: block;
+}
+
 .nav-header a {
-	color: #252525;
-	padding: 8px 4px;
-	margin: 0 20px;
+	display: block;
+	text-align: center;
+	color: #ddd;
+	padding: 6px 4px;
+	margin-bottom: 10px;
 }
 
 .nav-header a:hover,
 .nav-header .current-menu-item > a,
 .nav-header .menu-item-has-children:hover > a,
 .nav-header .sub-menu .current-menu-item > a:hover {
-	border-bottom: 1px solid #252525;
+	color: #fff;
 }
 
 .nav-header .sub-menu .current-menu-item > a {
 	color: #999;
+}
+
+.nav-header .current-menu-item > a::before {
+	content: '';
+	position: absolute;
+	width: 60px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -30px;
+	border-bottom: 1px dotted rgba(255,255,255,0.4);
 }
 
 .nav-header .sub-menu a {
@@ -1191,20 +1228,20 @@ Site Navigation
 .home .nav-primary .current-menu-item > a,
 .menu-toggle.primary-toggle,
 .nav-primary {
-	background-color: #252525;
+	background-color: #d4d4d4;
 	border-radius: 0;
 }
 
 .nav-primary a {
-	color: #e4e4e4;
+	color: #555;
 }
 
 .nav-primary a:hover,
 .nav-primary .current-menu-item > a,
 .nav-primary .menu-item-has-children:hover > a,
 .nav-primary .sub-menu .current-menu-item > a:hover {
-	background: #111;
-	color: #fff;
+	background: rgba(0,0,0,0.1);
+	color: #555;
 }
 
 .nav-primary .sub-menu .current-menu-item > a {
@@ -1440,11 +1477,14 @@ Content Area
 --------------------------------------------- */
 
 .home .section .wrap {
-	padding: 80px 15px;
+}
+
+.home .section.entry {
+	margin-bottom: 0;
 }
 
 .home .section.odd {
-	background: #fff;
+	background: #f4f4f4;
 }
 
 /* Entries
@@ -1453,7 +1493,7 @@ Content Area
 .entry,
 .after-entry.widget-area {
 	margin-bottom: 40px;
-	padding: 3%;
+	padding: 5%;
 }
 
 .entry-content {
@@ -1716,7 +1756,7 @@ Sidebars
 }
 
 .sidebar .widget {
-	padding: 4%;
+	padding: 30px;
 }
 
 .sidebar .enews-widget {
@@ -1803,66 +1843,35 @@ Site Footer
 Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	only screen and (-moz-min-device-pixel-ratio: 1.5),
-	only screen and (-o-min-device-pixel-ratio: 3/2),
-	only screen and (min-device-pixel-ratio: 1.5) {
-
-	.site-title a {
-		background: url('images/logo@2x.png') no-repeat left;
-		background-size: contain;
-	}
-
-}
-
 @media only screen and (max-width: 1159px) {
 
-	.site-inner,
-	.wrap {
-		max-width: 960px;
-	}
-
-	.content {
-		width: 660px;
-	}
-
-	.sidebar-primary {
-		width: 300px;
-	}
-
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 960px) {
 
 	.content,
-	.sidebar-primary,
-	.site-inner,
-	.wrap {
+	.sidebar {
 		width: 100%;
-	}
-
-	.genesis-nav-menu li,
-	.site-header ul.genesis-nav-menu,
-	.site-header .search-form {
-		float: none;
-	}
-
-	.site-header .search-form {
-		margin: 16px auto;
-	}
-
-	.genesis-nav-menu li.right {
-		display: none;
-	}
-
-	.entry-footer .entry-meta {
-		margin: 0;
-		padding-top: 12px;
 	}
 
 }
 
 @media only screen and (max-width: 768px) {
+
+	.site-header {
+		position: relative;
+		width: 100%;
+		padding: 0 3%;
+		margin: 0;
+	}
+
+	.site-container {
+		padding: 0;
+	}
+
+	.site-title {
+		float: left;
+	}
 
 	.one-fifth,
 	.two-fifths,
@@ -1897,10 +1906,8 @@ Media Queries
 		margin: 10px 0 10px 10px;
 	}
 
-	.site-title a {
-		background-size: 220px 63px;
-		width: 220px;
-		height: 63px;
+	.js #menu-toggle:hover {
+		cursor: pointer;
 	}
 
 	.site-header .widget-area {
