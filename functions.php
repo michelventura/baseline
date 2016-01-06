@@ -3,7 +3,7 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 // Child theme (do not remove)
-define( 'CHILD_THEME_NAME', 'Baseline' );
+define( 'CHILD_THEME_NAME', 'Baseline V' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
 define( 'CHILD_THEME_VERSION', '2.1.0' );
 
