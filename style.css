@@ -979,6 +979,18 @@ Site Header
 	text-indent: -9999px;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-moz-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5) {
+
+	.site-title a {
+		background: url('images/logo@2x.png') no-repeat left;
+		background-size: contain;
+	}
+
+}
+
 .site-description {
 	height: 0;
 	text-indent: -9999px;
@@ -1803,18 +1815,6 @@ Site Footer
 Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	only screen and (-moz-min-device-pixel-ratio: 1.5),
-	only screen and (-o-min-device-pixel-ratio: 3/2),
-	only screen and (min-device-pixel-ratio: 1.5) {
-
-	.site-title a {
-		background: url('images/logo@2x.png') no-repeat left;
-		background-size: contain;
-	}
-
-}
-
 @media only screen and (max-width: 1159px) {
 
 	.site-inner,
@@ -1895,16 +1895,6 @@ Media Queries
 		color: #fff;
 		padding: 0;
 		margin: 10px 0 10px 10px;
-	}
-
-	.site-title a {
-		background-size: 220px 63px;
-		width: 220px;
-		height: 63px;
-	}
-
-	.site-header .widget-area {
-		display: none;
 	}
 
 	.no-js nav {
