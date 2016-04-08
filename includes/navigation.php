@@ -7,8 +7,8 @@ function baseline_register_header_nav() {
 }
 
 // Display header nav
-add_action( 'genesis_header', 'baselines_do_header_nav', 12 );
-function baselines_do_header_nav() {
+add_action( 'genesis_header', 'baseline_do_header_nav', 12 );
+function baseline_do_header_nav() {
 	echo '<div class="header-content">';
 		// echo get_search_form();
 		genesis_nav_menu( array( 'theme_location' => 'header' ) );
@@ -22,7 +22,7 @@ add_action( 'genesis_before_footer', 'genesis_do_subnav', 5 );
 // Add side menu after site-container
 add_action( 'genesis_after', 'baseline_sidr_navigation' );
 function baseline_sidr_navigation() {
-?>
+	?>
 	<nav id="side-menu" style="display:none;" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
     	<button class="menu-close" role="button" aria-pressed="false"><i class="fa fa-times"></i><?php echo __( ' Close', 'baseline' ); ?></button>
@@ -64,5 +64,5 @@ function baseline_sidr_navigation() {
 		?>
 
 	</nav>
-<?php
+	<?php
 }

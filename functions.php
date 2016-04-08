@@ -5,11 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
-<<<<<<< HEAD
-define( 'CHILD_THEME_VERSION', '2.2.0' );
-=======
 define( 'CHILD_THEME_VERSION', '2.1.1' );
->>>>>>> 799b52adc66e70277b10d81a5a9a4c61b155b1df
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
