@@ -3,10 +3,14 @@
 	Description: Baseline is a starter theme for The Genesis Framework.
 	Author: Mike Hemberger
 	Author URI: http://thestizmedia.com/
+<<<<<<< HEAD
 	Version: 2.2.0
+=======
+	Version: 2.1.1
+>>>>>>> 799b52adc66e70277b10d81a5a9a4c61b155b1df
 
 	Template: genesis
-	Template Version: 2.0.2
+	Baseline Version: 2.1.1
 
 	License: GPL-2.0+
 	License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -958,7 +962,11 @@ Site Header
 	only screen and (min-device-pixel-ratio: 1.5) {
 
 	.site-title a {
+<<<<<<< HEAD
 		background: url('images/logo@2x.png') no-repeat center;
+=======
+		background: url('images/logo@2x.png') no-repeat left;
+>>>>>>> 799b52adc66e70277b10d81a5a9a4c61b155b1df
 		background-size: contain;
 	}
 
@@ -1858,6 +1866,17 @@ Media Queries
 		margin: 10px 0 10px 10px;
 	}
 
+<<<<<<< HEAD
+=======
+	.no-js nav {
+		display: block;
+	}
+
+	.no-js .nav-header {
+		margin-top: 12px;
+	}
+
+>>>>>>> 799b52adc66e70277b10d81a5a9a4c61b155b1df
 	.js .nav-header,
 	.js .nav-primary,
 	.js .nav-secondary {
