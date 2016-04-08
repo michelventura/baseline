@@ -1,3 +1,3 @@
 # Baseline
 
-	* Starter theme for the Genesis Framework
+* A custom startet theme for the Genesis Framework

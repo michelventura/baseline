@@ -7,6 +7,7 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 // Unregister secondary sidebar
 unregister_sidebar( 'sidebar-alt' );
+unregister_sidebar( 'header-right' );
 
 // Remove the edit link
 add_filter ( 'genesis_edit_post_link' , '__return_false' );

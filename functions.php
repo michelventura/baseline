@@ -5,7 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
-define( 'CHILD_THEME_VERSION', '2.1.0' );
+define( 'CHILD_THEME_VERSION', '2.2.0' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
@@ -14,7 +14,13 @@ add_theme_support( 'html5' );
 add_theme_support( 'genesis-responsive-viewport' );
 
 // Add Accessibility support
-add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu',  'search-form', 'skip-links' ) );
+add_theme_support( 'genesis-accessibility', array(
+	'404-page',
+	'drop-down-menu',
+	'headings',
+	'search-form',
+	'skip-links',
+) );
 
 // Enqueue Javascript files
 add_action( 'wp_enqueue_scripts', 'baseline_enqueue_scripts' );
@@ -22,6 +28,11 @@ function baseline_enqueue_scripts() {
 	// Sidr slide out menu
 	wp_enqueue_script( 'sidr',  get_stylesheet_directory_uri() . '/assets/js/jquery.sidr.min.js', array( 'jquery' ), '1.2.1', true );
 	wp_enqueue_script( 'baseline-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array( 'sidr' ), '1.0.0', true );
+	// KEEP THESE - ONLY COMMENTED OUT TO RUN MINIFIED ON PRODUCTION SITE
+	// wp_enqueue_style( 'flexgrid', get_stylesheet_directory_uri() . '/assets/css/flexgrid.css', array(), '1.0.0' );
+	// wp_enqueue_style( 'floatgrid', get_stylesheet_directory_uri() . '/assets/css/floatgrid.css', array(), '1.0.0' );
+	wp_enqueue_style( 'baseline-grids', get_stylesheet_directory_uri() . '/assets/css/grids.min.css', array(), '1.0.0' );
+
 }
 
 // Enqueue CSS files
@@ -60,20 +71,20 @@ function author_box_gravatar_size( $size ) {
 }
 
 // Modify the size of the Gravatar in comments
-add_filter( 'genesis_comment_list_args', 'sp_comments_gravatar' );
-function sp_comments_gravatar( $args ) {
+add_filter( 'genesis_comment_list_args', 'baseline_comments_gravatar' );
+function baseline_comments_gravatar( $args ) {
 	$args['avatar_size'] = 160;
 	return $args;
 }
 
 // Customize the credits
-add_filter( 'genesis_footer_creds_text', 'tsm_custom_footer_creds_text' );
-function tsm_custom_footer_creds_text() {
-?>
+add_filter( 'genesis_footer_creds_text', 'baseline_custom_footer_creds_text' );
+function baseline_custom_footer_creds_text() {
+	?>
     <div class="creds">
     	<p>Copyright &copy; <?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> &middot; All Rights Reserved &middot; Website by <a rel="nofollow" href="http://thestizmedia.com" title="The Stiz Media, LLC">The Stiz Media, LLC</a></p>
 	</div>
-<?php
+	<?php
 }
 
 /**
@@ -81,8 +92,8 @@ function tsm_custom_footer_creds_text() {
  * Max image width should be 320px
  * @link http://andrew.hedges.name/experiments/aspect_ratio/
  */
-add_action('login_head',  'tsm_custom_dashboard_logo');
-function tsm_custom_dashboard_logo() {
+add_action('login_head',  'baseline_custom_dashboard_logo');
+function baseline_custom_dashboard_logo() {
 	echo '<style  type="text/css">
 		.login h1 a {
 			background-image:url(' . get_stylesheet_directory_uri() . '/images/logo@2x.png)  !important;
@@ -94,7 +105,7 @@ function tsm_custom_dashboard_logo() {
 }
 
 // Change login link
-add_filter('login_headerurl','tsm_loginpage_custom_link');
-function tsm_loginpage_custom_link() {
+add_filter('login_headerurl','baseline_loginpage_custom_link');
+function baseline_loginpage_custom_link() {
 	return get_site_url();
 }

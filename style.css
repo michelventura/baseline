@@ -3,7 +3,7 @@
 	Description: Baseline is a starter theme for The Genesis Framework.
 	Author: Mike Hemberger
 	Author URI: http://thestizmedia.com/
-	Version: 2.1.0
+	Version: 2.2.0
 
 	Template: genesis
 	Template Version: 2.0.2
@@ -86,34 +86,34 @@ input[type="search"] {
 /* Float Clearing
 --------------------------------------------- */
 
-.archive-pagination:before,
-.clearfix:before,
-.entry:before,
-.entry-pagination:before,
-.footer-widgets:before,
-.nav-primary:before,
-.nav-secondary:before,
-.site-container:before,
-.site-footer:before,
-.site-header:before,
-.site-inner:before,
-.wrap:before {
+.archive-pagination::before,
+.clearfix::before,
+.entry::before,
+.entry-pagination::before,
+.footer-widgets::before,
+.nav-primary::before,
+.nav-secondary::before,
+.site-container::before,
+.site-footer::before,
+.site-header::before,
+.site-inner::before,
+.wrap::before {
 	content: " ";
 	display: table;
 }
 
-.archive-pagination:after,
-.clearfix:after,
-.entry:after,
-.entry-pagination:after,
-.footer-widgets:after,
-.nav-primary:after,
-.nav-secondary:after,
-.site-container:after,
-.site-footer:after,
-.site-header:after,
-.site-inner:after,
-.wrap:after {
+.archive-pagination::after,
+.clearfix::after,
+.entry::after,
+.entry-pagination::after,
+.footer-widgets::after,
+.nav-primary::after,
+.nav-secondary::after,
+.site-container::after,
+.site-footer::after,
+.site-header::after,
+.site-inner::after,
+.wrap::after {
 	clear: both;
 	content: " ";
 	display: table;
@@ -528,19 +528,22 @@ Structure and Layout
 
 .site-inner {
 	clear: both;
-	background-color: #fff;
 	margin: 40px auto;
 	overflow: hidden;
 }
 
+.site-inner,
+.site-header .wrap {
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
 .home .site-inner {
-	background: transparent;
 	max-width: 100%;
 	margin: 0;
 }
 
 .baseline-landing .site-inner {
-	background-color: #fff;
 	border-radius: 3px;
 	margin: 80px auto;
 	max-width: 960px;
@@ -565,7 +568,7 @@ Structure and Layout
 
 .content {
 	float: right;
-	width: 800px;
+	width: 66%;
 }
 
 .content-sidebar .content {
@@ -580,7 +583,7 @@ Structure and Layout
 
 .sidebar-primary {
 	float: right;
-	width: 360px;
+	width: 32%;
 }
 
 .sidebar-content .sidebar-primary {
@@ -867,37 +870,8 @@ Widgets
 Plugins
 ---------------------------------------------------------------------------------------------------- */
 
-/* Genesis eNews Extended
---------------------------------------------- */
-
-.enews-widget {
-	color: #999;
-}
-
-.enews-widget .widget-title {
-}
-
-.enews-widget input {
-	margin-bottom: 16px;
-}
-
-.enews-widget input:focus {
-	border: 1px solid #ddd;
-}
-
-.enews-widget input[type="submit"] {
-	background-color: #067CCC;
-	margin: 0;
-	width: 100%;
-}
-
-.enews-widget input:hover[type="submit"] {
-	background-color: #333;
-}
-
 /* Gravity Forms
 --------------------------------------------- */
-
 
 div.gform_wrapper input[type=text],
 div.gform_wrapper input[type=url],
@@ -948,16 +922,15 @@ img#wpstats {
 	display: none;
 }
 
-
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
+	padding: 3% 0;
 }
 
 .site-header .wrap {
-	padding: 30px 0;
 }
 
 /* Title Area
@@ -977,6 +950,18 @@ Site Header
 	width: 350px;
 	height: 100px;
 	text-indent: -9999px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-moz-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5) {
+
+	.site-title a {
+		background: url('images/logo@2x.png') no-repeat center;
+		background-size: contain;
+	}
+
 }
 
 .site-description {
@@ -1042,7 +1027,7 @@ Site Navigation
 	text-transform: uppercase;
 }
 
-.genesis-nav-menu .menu-item-has-children > a:after {
+.genesis-nav-menu .menu-item-has-children > a::after {
 	content: "\f107";
 	font-family: FontAwesome;
 	font-size: 10px;
@@ -1375,11 +1360,11 @@ Site Navigation
 	-webkit-font-smoothing: antialiased;
 }
 
-.sidr .sub-menu-toggle:before {
+.sidr .sub-menu-toggle::before {
 	content: "\f107";
 }
 
-.sidr .sub-menu-toggle.menu-open:before {
+.sidr .sub-menu-toggle.menu-open::before {
 	content: "\f106";
 }
 
@@ -1452,12 +1437,13 @@ Content Area
 
 .entry,
 .after-entry.widget-area {
+	background-color: #fff;
 	margin-bottom: 40px;
-	padding: 3%;
+	padding: 4%;
 }
 
 .entry-content {
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 .entry-content a {
@@ -1697,7 +1683,7 @@ Sidebars
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
-	background-color: #ececec;
+	background-color: #fff;
 	color: #686868;
 }
 
@@ -1716,17 +1702,8 @@ Sidebars
 }
 
 .sidebar .widget {
-	padding: 4%;
+	padding: 30px;
 }
-
-.sidebar .enews-widget {
-	background-color: #252525;
-}
-
-.sidebar .enews-widget .widget-title {
-	color: #fff;
-}
-
 
 /*
 Footer Widgets
@@ -1803,32 +1780,8 @@ Site Footer
 Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	only screen and (-moz-min-device-pixel-ratio: 1.5),
-	only screen and (-o-min-device-pixel-ratio: 3/2),
-	only screen and (min-device-pixel-ratio: 1.5) {
-
-	.site-title a {
-		background: url('images/logo@2x.png') no-repeat left;
-		background-size: contain;
-	}
-
-}
-
 @media only screen and (max-width: 1159px) {
 
-	.site-inner,
-	.wrap {
-		max-width: 960px;
-	}
-
-	.content {
-		width: 660px;
-	}
-
-	.sidebar-primary {
-		width: 300px;
-	}
 
 }
 
@@ -1882,6 +1835,14 @@ Media Queries
 		width: 100%;
 	}
 
+	.no-js nav {
+		display: block;
+	}
+
+	.no-js .nav-header {
+		margin-top: 12px;
+	}
+
 	.js #menu-toggle {
 		display: block;
 		visibility: visible;
@@ -1895,24 +1856,6 @@ Media Queries
 		color: #fff;
 		padding: 0;
 		margin: 10px 0 10px 10px;
-	}
-
-	.site-title a {
-		background-size: 220px 63px;
-		width: 220px;
-		height: 63px;
-	}
-
-	.site-header .widget-area {
-		display: none;
-	}
-
-	.no-js nav {
-		display: block;
-	}
-
-	.no-js .nav-header {
-		margin-top: 12px;
 	}
 
 	.js .nav-header,
