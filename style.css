@@ -1858,8 +1858,6 @@ Media Queries
 		margin: 10px 0 10px 10px;
 	}
 
-<<<<<<< HEAD
-=======
 	.no-js nav {
 		display: block;
 	}
@@ -1868,7 +1866,6 @@ Media Queries
 		margin-top: 12px;
 	}
 
->>>>>>> 799b52adc66e70277b10d81a5a9a4c61b155b1df
 	.js .nav-header,
 	.js .nav-primary,
 	.js .nav-secondary {
