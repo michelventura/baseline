@@ -541,6 +541,8 @@ Structure and Layout
 .home .site-inner {
 	max-width: 100%;
 	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .baseline-landing .site-inner {
