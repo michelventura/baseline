@@ -5,7 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
-define( 'CHILD_THEME_VERSION', '2.2.0' );
+define( 'CHILD_THEME_VERSION', '2.2.1' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
@@ -59,14 +59,11 @@ function baseline_global_body_class( $classes ) {
 // include_once('includes/widgetize.php');
 
 /**
- * Include all php files in the /includes directory
+ * Include all php files in the /includes/ directory
  *
  * https://gist.github.com/theandystratton/5924570
  */
-add_action( 'genesis_setup', 'baseline_load_includes_files', 15 );
-function baseline_load_includes_files() {
-    foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) { include $file; }
-}
+foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) { include $file; }
 
 // Customize the entry meta in the entry header
 add_filter( 'genesis_post_info', 'baseline_post_info_filter' );
