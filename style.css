@@ -1,9 +1,9 @@
 /*
 	Theme Name: Baseline
-	Description: Baseline is a starter theme for The Genesis Framework.
+	Description: Baseline is a custom child theme for The Genesis Framework.
 	Author: Mike Hemberger
 	Author URI: http://thestizmedia.com/
-	Version: 2.1.1
+	Version: 2.2.0
 
 	Template: genesis
 	Baseline Version: 2.1.1
@@ -512,6 +512,41 @@ td {
 
 .table-td {
 	padding: 8px 20px;
+}
+
+/* Flex Tables - add cell classes and use width: n%; to determine width
+--------------------------------------------- */
+
+.ftable {
+	border: 1px solid rgba(0,0,0,0.05);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.ftable-head {
+	background-color: rgba(0,0,0,0.05);
+	font-weight: bold;
+}
+
+.ftable-head,
+.ftable-row {
+	display: -webkit-flex;display: -ms-flexbox;display: flex;
+	-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;
+	-webkit-align-items: center;-ms-flex-align: center;align-items: center;
+}
+
+.ftable-row {
+  	border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.ftable-row:last-of-type {
+    border-bottom: 0;
+}
+
+.ftable-header,
+.ftable-cell {
+  text-align: center;
+	padding: 10px;
 }
 
 /*
@@ -1150,7 +1185,7 @@ Site Navigation
 .nav-header .current-menu-item > a,
 .nav-header .menu-item-has-children:hover > a,
 .nav-header .sub-menu .current-menu-item > a:hover {
-	border-bottom: 1px solid #252525;
+	color: #067CCC;
 }
 
 .nav-header .sub-menu .current-menu-item > a {
@@ -1426,12 +1461,12 @@ Content Area
 /* Home / Front Page
 --------------------------------------------- */
 
-.home .section .wrap {
+.home-section .wrap {
 	padding: 80px 15px;
 }
 
-.home .section.odd {
-	background: #fff;
+.home-section:nth-of-type(odd) {
+	background-color: #fff;
 }
 
 /* Entries
@@ -1490,7 +1525,7 @@ Content Area
 	width: 50%;
 }
 
-.single .wp-post-image {
+.single .entry-content .wp-post-image {
 	margin-bottom: 16px;
 }
 

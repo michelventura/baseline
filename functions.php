@@ -5,7 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
-define( 'CHILD_THEME_VERSION', '2.1.1' );
+define( 'CHILD_THEME_VERSION', '2.2.0' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
@@ -52,10 +52,21 @@ function baseline_global_body_class( $classes ) {
 }
 
 // Include our extra files to stay organized
-include_once('includes/images.php');
-include_once('includes/navigation.php');
-include_once('includes/remove.php');
-include_once('includes/widgetize.php');
+// include_once('includes/images.php');
+// include_once('includes/navigation.php');
+// include_once('includes/plugins.php');
+// include_once('includes/remove.php');
+// include_once('includes/widgetize.php');
+
+/**
+ * Include all php files in the /includes directory
+ *
+ * https://gist.github.com/theandystratton/5924570
+ */
+add_action( 'genesis_setup', 'baseline_load_includes_files', 15 );
+function baseline_load_includes_files() {
+    foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) { include $file; }
+}
 
 // Customize the entry meta in the entry header
 add_filter( 'genesis_post_info', 'baseline_post_info_filter' );
@@ -65,8 +76,8 @@ function baseline_post_info_filter($post_info) {
 }
 
 // Modify the size of the Gravatar in the author box
-add_filter( 'genesis_author_box_gravatar_size', 'author_box_gravatar_size' );
-function author_box_gravatar_size( $size ) {
+add_filter( 'genesis_author_box_gravatar_size', 'baseline_author_box_gravatar_size' );
+function baseline_author_box_gravatar_size( $size ) {
 	return '200';
 }
 
