@@ -26,8 +26,7 @@ add_theme_support( 'genesis-accessibility', array(
 add_action( 'wp_enqueue_scripts', 'baseline_enqueue_scripts' );
 function baseline_enqueue_scripts() {
 	// Sidr slide out menu
-	// wp_enqueue_script( 'sidr',  get_stylesheet_directory_uri() . '/assets/js/jquery.sidr.min.js', array( 'jquery' ), '1.2.1', true );
-	wp_enqueue_script( 'baseline-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'baseline-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array(), '2.0.0', true );
 	// KEEP THESE - ONLY COMMENTED OUT TO RUN MINIFIED ON PRODUCTION SITE
 	// wp_enqueue_style( 'flexgrid', get_stylesheet_directory_uri() . '/assets/css/flexgrid.css', array(), '1.0.0' );
 	// wp_enqueue_style( 'floatgrid', get_stylesheet_directory_uri() . '/assets/css/floatgrid.css', array(), '1.0.0' );
