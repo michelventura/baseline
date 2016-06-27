@@ -961,18 +961,24 @@ img#wpstats {
 Site Header
 ---------------------------------------------------------------------------------------------------- */
 
-.site-header {
-	padding: 3% 0;
+.site-header .wrap {
+	display: -webkit-box;display: -ms-flexbox;display: flex;
+	-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;
+	-webkit-box-align: center;-ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
+	-ms-flex-wrap: wrap;flex-wrap: wrap;
+	padding: 20px 3%;
 }
 
-.site-header .wrap {
+.site-header .wrap::before,
+.site-header .wrap::after {
+	display: none;
+	visibility: hidden;
 }
 
 /* Title Area
 --------------------------------------------- */
 
 .title-area {
-	float: left;
 }
 
 .site-title {
@@ -981,9 +987,10 @@ Site Header
 
 .site-title a {
 	display: block;
-	background: url(images/logo.png) no-repeat;
-	width: 350px;
-	height: 100px;
+	background: url(images/logo.png) no-repeat center;
+	background-size: contain;
+	width: 240px;
+	height: 69px;
 	text-indent: -9999px;
 }
 
@@ -993,8 +1000,7 @@ Site Header
 	only screen and (min-device-pixel-ratio: 1.5) {
 
 	.site-title a {
-		background: url('images/logo@2x.png') no-repeat center;
-		background-size: contain;
+		background-image: url('images/logo@2x.png');
 	}
 
 }
@@ -1009,20 +1015,6 @@ Site Header
 --------------------------------------------- */
 
 .header-content {
-	display: inline-block;
-	float: right;
-}
-
-.site-header .search-form {
-	float: right;
-	margin: 20px 0;
-}
-
-.site-header .search-form input {
-	display: inline;
-	width: 222px;
-	border: none;
-	border-radius: 0;
 }
 
 /*
@@ -1169,8 +1161,6 @@ Site Navigation
 --------------------------------------------- */
 
 .nav-header {
-	float: right;
-	margin-top: 30px;
 }
 
 .nav-header a {
@@ -1414,7 +1404,7 @@ Site Navigation
 .sidr input[type="search"] {
     width: 100%;
     font-size: 13px;
-    padding: 8px 12px;
+    padding: 10px 12px;
 	border-radius: none;
     border: 1px solid transparent;
     background: #fff;
@@ -1463,7 +1453,7 @@ Content Area
 --------------------------------------------- */
 
 .home-section .wrap {
-	padding: 80px 15px;
+	padding: 80px 3%;
 }
 
 .home-section:nth-of-type(odd) {
@@ -1617,17 +1607,18 @@ Content Area
 }
 
 .archive-pagination li {
-	display: inline;
+	display: inline-block;
 }
 
 .archive-pagination li a {
+	display: block;
 	background-color: #333;
 	border-radius: 3px;
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
 	padding: 8px 12px;
-	margin: 2px 4px;
+	margin: 2px;
 }
 
 .archive-pagination li a:hover,
@@ -1844,23 +1835,12 @@ Media Queries
 		width: 100%;
 	}
 
-	.genesis-nav-menu li,
-	.site-header ul.genesis-nav-menu,
-	.site-header .search-form {
+	.genesis-nav-menu li {
 		float: none;
-	}
-
-	.site-header .search-form {
-		margin: 16px auto;
 	}
 
 	.genesis-nav-menu li.right {
 		display: none;
-	}
-
-	.entry-footer .entry-meta {
-		margin: 0;
-		padding-top: 12px;
 	}
 
 }
@@ -1885,40 +1865,22 @@ Media Queries
 		width: 100%;
 	}
 
-	.js .site-header .wrap {
-		display: -webkit-box;display: -ms-flexbox;display: flex;
-		-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;
-		-webkit-box-align: center;-ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
-		-ms-flex-wrap: wrap;flex-wrap: wrap;
-	}
-
-	.js .site-header .wrap::before,
-	.js .site-header .wrap::after {
-		display: none;
-		visibility: hidden;
-	}
-
-	.js .title-area,
-	.js .header-content {
-		float: none;
+	.js #menu-toggle {
+		display: block;
+		visibility: visible;
+		text-align: center;
+		background: transparent;
+		color: #252525;
+		font-size: 28px;
+		margin-right: 12px;
+		padding: 0 14px;
+		border: 1px solid #252525;
+		border-radius: 3px;
 	}
 
 	.js .header-content {
 		flex: 0 0 100%;
 		margin: 0 auto;
-	}
-
-	.js #menu-toggle {
-		display: block;
-		visibility: visible;
-		width: 42px;
-		height: 42px;
-		line-height: 42px;
-		text-align: center;
-		background: #252525;
-		color: #fff;
-		padding: 0;
-		margin-right: 10px;
 	}
 
 	.js .nav-header,

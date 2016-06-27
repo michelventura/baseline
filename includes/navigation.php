@@ -24,7 +24,6 @@ add_action( 'genesis_after', 'baseline_sidr_navigation' );
 function baseline_sidr_navigation() {
 
 	echo '<nav id="side-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">';
-	// echo '<nav id="side-menu" style="display:none;" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">';
 
     	echo '<button class="menu-close" role="button" aria-pressed="false"><span class="fa fa-times" aria-hidden="true"></span>' . __( ' Close', 'baseline' ) . '</button>';
 
