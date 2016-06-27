@@ -1,5 +1,9 @@
 <?php
 
+// Reposition the breadcrumbs
+remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs' );
+
 // Register header nav menu
 add_action( 'init', 'baseline_register_header_nav' );
 function baseline_register_header_nav() {

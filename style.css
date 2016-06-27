@@ -561,7 +561,7 @@ Structure and Layout
 
 .site-inner {
 	clear: both;
-	margin: 40px auto;
+	margin: 20px auto;
 	overflow: hidden;
 }
 
@@ -579,10 +579,8 @@ Structure and Layout
 }
 
 .baseline-landing .site-inner {
-	border-radius: 3px;
-	margin: 80px auto;
+	margin: 20px auto 40px;
 	max-width: 960px;
-	padding: 40px;
 }
 
 .wrap {
@@ -816,10 +814,10 @@ img.alignright,
 --------------------------------------------- */
 
 .breadcrumb {
-	background: #dfdfdf;
-	color: #969696;
 	font-size: 14px;
-	padding: 9px 3%;
+	/*margin-top: -10px;*/
+	margin-bottom: 10px;
+	/*padding: 9px 3%;*/
 }
 
 .breadcrumb a {
@@ -979,6 +977,10 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
+}
+
+.baseline-landing .title-area {
+	margin: 0 auto;
 }
 
 .site-title {
