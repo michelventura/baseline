@@ -1286,7 +1286,6 @@ Site Navigation
 --------------------------------------------- */
 
 .sidr {
-    display: none;
     position: fixed;
     top: 0;
     height: 100%;
@@ -1297,6 +1296,10 @@ Site Navigation
 	overflow-x: hidden;
 	overflow-y: auto;
     z-index: 999999;
+}
+
+.no-js #side-menu {
+	display: none;
 }
 
 .sidr .sidr-inner {
@@ -1411,7 +1414,7 @@ Site Navigation
 .sidr input[type="search"] {
     width: 100%;
     font-size: 13px;
-    padding: 12px;
+    padding: 8px 12px;
 	border-radius: none;
     border: 1px solid transparent;
     background: #fff;
@@ -1744,6 +1747,12 @@ Sidebars
 Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 
+.footer-widgets .wrap::before,
+.footer-widgets .wrap::after {
+	display: none;
+	visibility: hidden;
+}
+
 .footer-widgets {
 	background-color: #333;
 	color: #999;
@@ -1751,11 +1760,17 @@ Footer Widgets
 	padding: 20px 16px;
 }
 
+.footer-widgets .wrap {
+	display: -webkit-box;display: -ms-flexbox;display: flex;
+	-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;
+	-ms-flex-wrap: wrap;flex-wrap: wrap;
+}
+
 .footer-widgets .widget-area {
-	display: inline-block;
-	width: 25%;
-	padding: 3%;
-	vertical-align: top;
+	-ms-flex-preferred-size: 32.222222222222%;flex-basis: 32.222222222222%;
+    max-width: 32.222222222222%;
+	padding: 10px;
+	margin: 20px 0;
 }
 
 .footer-widgets a {
@@ -1870,35 +1885,40 @@ Media Queries
 		width: 100%;
 	}
 
-	.no-js nav {
-		display: block;
+	.js .site-header .wrap {
+		display: -webkit-box;display: -ms-flexbox;display: flex;
+		-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;
+		-webkit-box-align: center;-ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
+		-ms-flex-wrap: wrap;flex-wrap: wrap;
 	}
 
-	.no-js .nav-header {
-		margin-top: 12px;
+	.js .site-header .wrap::before,
+	.js .site-header .wrap::after {
+		display: none;
+		visibility: hidden;
+	}
+
+	.js .title-area,
+	.js .header-content {
+		float: none;
+	}
+
+	.js .header-content {
+		flex: 0 0 100%;
+		margin: 0 auto;
 	}
 
 	.js #menu-toggle {
 		display: block;
 		visibility: visible;
-		float: right;
 		width: 42px;
 		height: 42px;
 		line-height: 42px;
-		vertical-align: middle;
 		text-align: center;
 		background: #252525;
 		color: #fff;
 		padding: 0;
-		margin: 10px 0 10px 10px;
-	}
-
-	.no-js nav {
-		display: block;
-	}
-
-	.no-js .nav-header {
-		margin-top: 12px;
+		margin-right: 10px;
 	}
 
 	.js .nav-header,
@@ -1908,8 +1928,17 @@ Media Queries
 		visibility: hidden;
 	}
 
+	.no-js nav {
+		display: block;
+	}
+
+	.no-js .nav-header {
+		margin-top: 12px;
+	}
+
 	.footer-widgets .widget-area {
-		width: 50%;
+		-ms-flex-preferred-size: 100%;flex-basis: 100%;
+	    max-width: 100%;
 	}
 
 	div.gform_wrapper textarea.medium,
@@ -1958,9 +1987,5 @@ Media Queries
 }
 
 @media only screen and (max-width: 400px) {
-
-	.footer-widgets .widget-area {
-		width: 100%;
-	}
 
 }

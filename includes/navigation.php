@@ -22,14 +22,14 @@ add_action( 'genesis_before_footer', 'genesis_do_subnav', 5 );
 // Add side menu after site-container
 add_action( 'genesis_after', 'baseline_sidr_navigation' );
 function baseline_sidr_navigation() {
-	?>
-	<nav id="side-menu" style="display:none;" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-    	<button class="menu-close" role="button" aria-pressed="false"><i class="fa fa-times"></i><?php echo __( ' Close', 'baseline' ); ?></button>
+	echo '<nav id="side-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">';
+	// echo '<nav id="side-menu" style="display:none;" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">';
 
-		<?php get_search_form(); ?>
+    	echo '<button class="menu-close" role="button" aria-pressed="false"><span class="fa fa-times" aria-hidden="true"></span>' . __( ' Close', 'baseline' ) . '</button>';
 
-		<?php
+		get_search_form();
+
 		// Header nav
 		$header = wp_nav_menu( array(
 			'theme_location' => 'header',
@@ -50,19 +50,17 @@ function baseline_sidr_navigation() {
 		) );
 		// Display menus if they are active
 		if ( ! empty( $header ) ) {
-			echo '<div class="sidr-heading">' . __( 'Header Menu', 'baseline' ) . '</div>';
+			// echo '<div class="sidr-heading">' . __( 'Header Menu', 'baseline' ) . '</div>';
 			echo $header;
 		}
 		if ( ! empty( $primary ) ) {
-			echo '<div class="sidr-heading">' . __( 'Primary Menu', 'baseline' ) . '</div>';
+			// echo '<div class="sidr-heading">' . __( 'Primary Menu', 'baseline' ) . '</div>';
 			echo $primary;
 		}
 		if ( ! empty( $secondary ) ) {
-			echo '<div class="sidr-heading">' . __( 'Secondary Menu', 'baseline' ) . '</div>';
+			// echo '<div class="sidr-heading">' . __( 'Secondary Menu', 'baseline' ) . '</div>';
 			echo $secondary;
 		}
-		?>
 
-	</nav>
-	<?php
+	echo '</nav>';
 }
