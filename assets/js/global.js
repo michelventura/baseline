@@ -97,7 +97,7 @@
             $.sidr('close', 'side-menu');
         },
         // Default is 75px, set to 0 for demo so any distance triggers swipe
-        threshold: 40
+        threshold: 10
     });
 
 })( this, jQuery );
