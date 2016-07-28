@@ -10,8 +10,8 @@ add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_c
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 //
-add_action( 'genesis_loop', 'tsm_do_front_page_loop' );
-function tsm_do_front_page_loop() {
+add_action( 'genesis_loop', 'prefix_do_front_page_loop' );
+function prefix_do_front_page_loop() {
 	?>
 	<article class="home-section">
 		<div class="wrap">

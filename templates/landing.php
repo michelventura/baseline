@@ -8,9 +8,9 @@ Template Name: Landing Page
 */
 
 // Add custom body class to the head
-add_filter( 'body_class', 'baseline_add_body_class' );
-function baseline_add_body_class( $classes ) {
-   $classes[] = 'baseline-landing';
+add_filter( 'body_class', 'prefix_add_body_class' );
+function prefix_add_body_class( $classes ) {
+   $classes[] = 'prefix-landing';
    return $classes;
 }
 
@@ -18,7 +18,7 @@ function baseline_add_body_class( $classes ) {
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
 // Remove site header elements
-remove_action( 'genesis_header', 'baseline_do_header_nav', 12 );
+remove_action( 'genesis_header', 'prefix_do_header_nav', 12 );
 
 // Remove navigation
 remove_action( 'genesis_after_header', 'genesis_do_nav' );

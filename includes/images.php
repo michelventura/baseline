@@ -11,8 +11,8 @@
 // add_image_size( 'banner', 1200, 400, TRUE );
 
 // Add our image sizes to the media chooser
-// add_filter('image_size_names_choose', 'baseline_do_media_chooser_sizes');
-function baseline_do_media_chooser_sizes( $sizes ) {
+// add_filter( 'image_size_names_choose', 'prefix_do_media_chooser_sizes' );
+function prefix_do_media_chooser_sizes( $sizes ) {
 	$addsizes = array(
 		'one-third'  => __( 'One Third'),
 		'one-fourth' => __( 'One Fourth'),
@@ -25,8 +25,8 @@ function baseline_do_media_chooser_sizes( $sizes ) {
 add_filter( 'use_default_gallery_style', '__return_false' );
 
 // Add featured image to single posts
-// add_action( 'genesis_entry_content', 'baseline_do_entry_featured_image', 8 );
-function baseline_do_entry_featured_image() {
+// add_action( 'genesis_entry_content', 'prefix_do_entry_featured_image', 8 );
+function prefix_do_entry_featured_image() {
     if ( ! ( is_singular( array('post') ) && has_post_thumbnail() ) ) {
     	return;
     }
