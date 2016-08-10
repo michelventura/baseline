@@ -30,5 +30,11 @@ function prefix_do_entry_featured_image() {
     if ( ! ( is_singular( array('post') ) && has_post_thumbnail() ) ) {
     	return;
     }
+    echo '<div class="featured-image">';
 	the_post_thumbnail( 'featured' );
+	echo '</div>';
+	$caption = get_post(get_post_thumbnail_id())->post_excerpt;
+	if ( $caption ) {
+		echo '<span class="image-caption">' . $caption . '</span>';
+	}
 }
