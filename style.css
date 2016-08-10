@@ -1596,7 +1596,7 @@ Content Area
 }
 
 .featured-image {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 .featured-image .wp-post-image {
@@ -1607,7 +1607,7 @@ Content Area
 .featured-image ~ .image-caption {
 	display: block;
 	font-size: 14px;
-	margin: -4px 0 16px;
+	margin: -14px 0 16px;
 }
 
 /* Pagination
