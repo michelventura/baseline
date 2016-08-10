@@ -1039,25 +1039,24 @@ Site Navigation
 --------------------------------------------- */
 
 .genesis-nav-menu {
+	display: -ms-flexbox;display: flex;
+	-ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
 	clear: both;
 	line-height: 1.5;
 	width: 100%;
 }
 
 .genesis-nav-menu .menu-item {
-	display: inline-block;
-	text-align: left;
+	display: -ms-flexbox;display: flex;
+	-ms-flex: 0 0 auto;flex: 0 0 auto;
 }
 
 .genesis-nav-menu a {
+	-ms-flex: 0 0 auto;flex: 0 0 auto;
 	position: relative;
 	display: block;
 	color: #e4e4e4;
-	padding: 14px 26px;
-}
-
-.genesis-nav-menu > .menu-item > a {
-	text-transform: uppercase;
+	padding: 14px 18px;
 }
 
 .genesis-nav-menu .menu-item-has-children > a::after {
