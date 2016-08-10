@@ -1112,51 +1112,6 @@ Site Navigation
 	padding-right: 0;
 }
 
-.genesis-nav-menu > .right {
-	display: inline-block;
-	float: right;
-	list-style-type: none;
-	padding: 14px 0;
-	text-transform: uppercase;
-}
-
-.genesis-nav-menu > .right > a {
-	display: inline;
-	padding: 0;
-}
-
-.genesis-nav-menu > .rss > a {
-	margin-left: 48px;
-}
-
-.genesis-nav-menu > .search {
-	width: 200px;
-	padding: 7px 0 0;
-}
-
-.genesis-nav-menu > .search input {
-	padding: 8px 16px 8px;
-	border-radius: 1px;
-	border: none;
-}
-
-.genesis-nav-menu > .twitter a:hover {
-	color: #fff;
-}
-
-.genesis-nav-menu > .twitter::before {
-	color: #fff;
-	content: "\f099";
-	display: inline-block;
-	font-family: FontAwesome;
-	font-size: 24px;
-	font-weight: normal;
-	line-height: 1;
-	margin: 0 15px 0 0;
-	vertical-align: top;
-	-webkit-font-smoothing: antialiased;
-}
-
 /* Site Header Navigation
 --------------------------------------------- */
 
@@ -1849,14 +1804,6 @@ Media Queries
 		width: 100%;
 	}
 
-	.genesis-nav-menu li {
-		float: none;
-	}
-
-	.genesis-nav-menu li.right {
-		display: none;
-	}
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -1964,5 +1911,4 @@ Media Queries
 
 @media only screen and (max-width: 400px) {
 
-}
 }
