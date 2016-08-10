@@ -1052,7 +1052,6 @@ Site Navigation
 }
 
 .genesis-nav-menu a {
-	-ms-flex: 0 0 auto;flex: 0 0 auto;
 	position: relative;
 	display: block;
 	color: #e4e4e4;
