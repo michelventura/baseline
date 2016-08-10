@@ -1595,6 +1595,21 @@ Content Area
 	content: "\f02c";
 }
 
+.featured-image {
+	margin-bottom: 10px;
+}
+
+.featured-image .wp-post-image {
+	display: block;
+	margin: 0;
+}
+
+.featured-image ~ .image-caption {
+	display: block;
+	font-size: 14px;
+	margin: -4px 0 16px;
+}
+
 /* Pagination
 --------------------------------------------- */
 
