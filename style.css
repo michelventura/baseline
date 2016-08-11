@@ -1096,10 +1096,11 @@ Site Navigation
 }
 
 .genesis-nav-menu .menu-item:hover {
-	position: static;
+	position: relative;
 }
 
 .genesis-nav-menu .menu-item:hover > .sub-menu {
+	top: 100%;
 	left: auto;
 	opacity: 1;
 }
