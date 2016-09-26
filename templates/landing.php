@@ -1,8 +1,4 @@
 <?php
-/**
- * This file adds the Landing Page template.
- */
-
 /*
 Template Name: Landing Page
 */
