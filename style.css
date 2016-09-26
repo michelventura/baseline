@@ -1,16 +1,16 @@
-/*
-	Theme Name: Baseline
-	Description: Baseline is a custom child theme for The Genesis Framework.
-	Author: Mike Hemberger
-	Author URI: http://thestizmedia.com/
-	Version: 2.3.3
-
-	Template: genesis
-	Baseline Version: 2.3.2
-
-	License: GPL-2.0+
-	License URI: http://www.opensource.org/licenses/gpl-license.php
-*/
+/**
+ * Theme Name: Baseline
+ * Description: Baseline is a custom child theme for The Genesis Framework.
+ * Author: Mike Hemberger
+ * Author URI: http://thestizmedia.com/
+ * Version: 2.4.0
+ *
+ * Template: genesis
+ * Baseline Version: 2.4.0
+ *
+ * License: GPL-2.0+
+ * License URI: http://www.opensource.org/licenses/gpl-license.php
+ */
 
 
 /* Table of Contents
@@ -21,31 +21,34 @@
 		- Float Clearing
 	- Defaults
 		- Typographical Elements
+		- Screen reader text
+		- Skip Links
+		- Accessible Menu
 		- Headings
 		- Objects
 		- Forms
 		- Tables
+		- Flex Tables
 	- Structure and Layout
 		- Site Containers
 		- Column Widths and Positions
-		- Column Classes
 	- Common Classes
 		- WordPress
 		- Genesis
 		- Titles
 	- Widgets
-		- Featured Content
 	- Plugins
-		- Genesis eNews Extended
 		- Gravity Forms
 		- Jetpack
 	- Site Header
 		- Title Area
-		- Widget Area
+		- Header Content
 	- Site Navigation
+		- General Navigation
 		- Header Navigation
 		- Primary Navigation
 		- Secondary Navigation
+		- Mobile Navigation
 	- Content Area
 		- Front Page
 		- Entries
@@ -55,9 +58,9 @@
 	- Footer Widgets
 	- Site Footer
 	- Media Queries
-		- max-width: 1139px
+		- max-width: 1159px
 		- max-width: 1023px
-		- max-width: 767px
+		- max-width: 768px
 
 */
 
@@ -277,7 +280,7 @@ cite {
 	opacity: 1;
 }
 
-/* Headings
+/* ## Headings
 --------------------------------------------- */
 
 h1,
@@ -317,7 +320,7 @@ h6 {
 	font-size: 16px;
 }
 
-/* Objects
+/* ## Objects
 --------------------------------------------- */
 
 embed,
@@ -334,7 +337,7 @@ img {
 	width: auto; /* IE8 */
 }
 
-/* Forms
+/* ## Forms
 --------------------------------------------- */
 
 input,
@@ -445,7 +448,7 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
-/* Tables
+/* ## Tables
 --------------------------------------------- */
 
 table {
@@ -507,7 +510,7 @@ td {
 	padding: 8px 20px;
 }
 
-/* Flex Tables - add cell classes and use width: n%; to determine width
+/* ## Flex Tables - add cell classes and use width: n%; to determine width
 --------------------------------------------- */
 
 .ftable {
@@ -543,10 +546,10 @@ td {
 }
 
 /*
-Structure and Layout
+# Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
 
-/* Site Containers
+/* ## Site Containers
 --------------------------------------------- */
 
 .site-inner,
@@ -587,7 +590,7 @@ Structure and Layout
 	margin-bottom: 80px;
 }
 
-/* Column Widths and Positions
+/* ## Column Widths and Positions
 --------------------------------------------- */
 
 /* Wrapping div for .content and .sidebar-primary */
@@ -639,10 +642,10 @@ Structure and Layout
 }
 
 /*
-Common Classes
+# Common Classes
 ---------------------------------------------------------------------------------------------------- */
 
-/* WordPress
+/* ## WordPress
 --------------------------------------------- */
 
 .avatar {
@@ -748,7 +751,7 @@ img.alignright,
 	text-align: center;
 }
 
-/* Genesis
+/* ## Genesis
 --------------------------------------------- */
 
 .breadcrumb {
@@ -797,7 +800,7 @@ img.alignright,
 	margin-right: 24px;
 }
 
-/* Titles
+/* ## Titles
 --------------------------------------------- */
 
 .entry-title {
@@ -829,15 +832,15 @@ img.alignright,
 
 
 /*
-Widgets
+# Widgets
 ---------------------------------------------------------------------------------------------------- */
 
 
 /*
-Plugins
+# Plugins
 ---------------------------------------------------------------------------------------------------- */
 
-/* Gravity Forms
+/* ## Gravity Forms
 --------------------------------------------- */
 
 div.gform_wrapper input[type=text],
@@ -865,24 +868,7 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 	font-size: 14px;
 }
 
-/* WordPress SEO (Yoast)
---------------------------------------------- */
-
-/*Local SEO add-on*/
-
-#wpseo-directions-wrapper {
-	margin-top: 30px;
-}
-
-.wpseo-directions-submit {
-	margin-top: 10px;
-}
-
-.adp-step, .adp-text {
-	padding-left: 34px;
-}
-
-/* Jetpack
+/* ## Jetpack
 --------------------------------------------- */
 
 img#wpstats {
@@ -890,7 +876,7 @@ img#wpstats {
 }
 
 /*
-Site Header
+# Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header .wrap {
@@ -923,7 +909,7 @@ Site Header
 	visibility: hidden;
 }
 
-/* Title Area
+/* ## Title Area
 --------------------------------------------- */
 
 .title-area {
@@ -963,25 +949,17 @@ Site Header
 	margin: 0;
 }
 
-/* Header Content
+/* ## Header Content
 --------------------------------------------- */
 
 .header-content {
 }
 
 /*
-Site Navigation
+# Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
-/* Navigation Toggles
---------------------------------------------- */
-
-#menu-toggle {
-	display: none;
-	visibility: hidden;
-}
-
-/* General Navigation
+/* ## General Navigation
 --------------------------------------------- */
 
 .genesis-nav-menu {
@@ -1059,7 +1037,7 @@ Site Navigation
 	padding-right: 0;
 }
 
-/* Site Header Navigation
+/* ## Header Navigation
 --------------------------------------------- */
 
 .nav-header {
@@ -1097,7 +1075,7 @@ Site Navigation
 	margin-top: -59px;
 }
 
-/* Primary Navigation
+/* ## Primary Navigation
 --------------------------------------------- */
 
 .home .nav-primary .current-menu-item > a,
@@ -1134,7 +1112,7 @@ Site Navigation
 .nav-primary .sub-menu .current-menu-item > a {
 }
 
-/* Secondary Navigation
+/* ## Secondary Navigation
 --------------------------------------------- */
 
 .menu-toggle.secondary-toggle,
@@ -1174,7 +1152,7 @@ Site Navigation
 .nav-secondary .sub-menu .current-menu-item > a {
 }
 
-/* Mobile Navigation - Sidr slide out nav menu
+/* ## Mobile Navigation - Sidr slide out nav menu
 --------------------------------------------- */
 
 button.slide-nav-link {
@@ -1220,10 +1198,6 @@ button.slide-nav-link .label {
 	visibility: hidden;
 }
 
-.sidr input[type=search]:focus {
-	/* border: 1px solid rgba(250,250,250,0.6); */
-}
-
 .sidr input[type=search]::-webkit-input-placeholder { color: #252525; }
 .sidr input[type=search]:-moz-input-placeholder { color: #252525; }
 .sidr input[type=search]::-moz-input-placeholder { color: #252525; }
@@ -1246,10 +1220,10 @@ button.slide-nav-link .label {
 }
 
 /*
-Content Area
+# Content Area
 ---------------------------------------------------------------------------------------------------- */
 
-/* Home / Front Page
+/* ## Front Page
 --------------------------------------------- */
 
 .home-section .wrap {
@@ -1260,7 +1234,7 @@ Content Area
 	background-color: #fff;
 }
 
-/* Entries
+/* ## Entries
 --------------------------------------------- */
 
 .entry,
@@ -1408,7 +1382,7 @@ Content Area
 	margin: -14px 0 16px;
 }
 
-/* Pagination
+/* ## Pagination
 --------------------------------------------- */
 
 .archive-pagination {
@@ -1445,7 +1419,7 @@ Content Area
 	border-bottom: 1px solid #ddd;
 }
 
-/* Comments
+/* ## Comments
 --------------------------------------------- */
 
 .comment-respond,
@@ -1521,9 +1495,8 @@ li.comment {
 	padding: 24px;
 }
 
-
 /*
-Sidebars
+# Sidebars
 ---------------------------------------------------------------------------------------------------- */
 
 .sidebar {
@@ -1549,7 +1522,7 @@ Sidebars
 }
 
 /*
-Footer Widgets
+# Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets .wrap::before,
@@ -1605,7 +1578,7 @@ Footer Widgets
 }
 
 /*
-Site Footer
+# Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
@@ -1631,7 +1604,7 @@ Site Footer
 
 
 /*
-Media Queries
+# Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 1159px) {
