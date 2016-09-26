@@ -274,8 +274,8 @@ cite {
 	position: static;
 }
 
-.menu .menu-item &gt; a:focus + ul.sub-menu,
-.menu .menu-item.sfHover &gt; ul.sub-menu {
+.menu .menu-item > a:focus + ul.sub-menu,
+.menu .menu-item.sfHover > ul.sub-menu {
 	left: auto;
 	opacity: 1;
 }
