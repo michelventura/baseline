@@ -1,5 +1,8 @@
 <?php
 
+// Lower the priority of Yoast SEO metabox
+add_filter( 'wpseo_metabox_prio', function() { return 'low'; });
+
 // SuperSide Me button options
 add_filter( 'supersideme_button_options', 'prefix_modify_button_options' );
 function prefix_modify_button_options( $button ) {
