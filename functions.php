@@ -77,7 +77,7 @@ add_filter( 'genesis_footer_creds_text', 'prefix_custom_footer_creds_text' );
 function prefix_custom_footer_creds_text( $text ) {
     $text = '';
     $text .= '<div class="creds">';
-    	$text .= '<p>Copyright &copy; ' . date('Y') . ' <a href="' . bloginfo('url') . '" title="' . bloginfo('name') . '">' . bloginfo('name') . '</a> &middot; All Rights Reserved &middot; Website by <a rel="nofollow" href="http://bizbudding.com" title="BizBudding Inc.">BizBudding Inc.</a></p>';
+    	$text .= '<p>Copyright &copy; ' . date('Y') . ' <a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('name') . '">' . get_bloginfo('name') . '</a> &middot; All Rights Reserved &middot; Website by <a rel="nofollow" href="http://bizbudding.com" title="BizBudding Inc.">BizBudding Inc.</a></p>';
 	$text .= '</div>';
 	return $text;
 }
