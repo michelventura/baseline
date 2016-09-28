@@ -1,13 +1,9 @@
 <?php
 
-// Reposition the breadcrumbs
-remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs' );
-
 // Register header nav menu
 add_action( 'init', 'prefix_register_header_nav' );
 function prefix_register_header_nav() {
-	register_nav_menu( 'header', __( 'Header Navigation', 'prefix' ) );
+	register_nav_menu( 'header', __( 'Header Navigation Menu', 'prefix' ) );
 }
 
 // Display header nav

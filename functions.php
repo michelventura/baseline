@@ -5,13 +5,23 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
-define( 'CHILD_THEME_VERSION', '2.4.0' );
+define( 'CHILD_THEME_VERSION', '2.5.0' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
 
 // Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
+
+// Add support for structural wraps
+add_theme_support( 'genesis-structural-wraps', array(
+    'breadcrumb',
+    'header',
+    'menu-primary',
+    'menu-secondary',
+    'footer-widgets',
+    'footer'
+) );
 
 // Add Accessibility support
 add_theme_support( 'genesis-accessibility', array(
@@ -25,7 +35,7 @@ add_theme_support( 'genesis-accessibility', array(
 // Enqueue Javascript files
 add_action( 'wp_enqueue_scripts', 'prefix_enqueue_scripts' );
 function prefix_enqueue_scripts() {
-	// wp_enqueue_script( 'prefix-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array('jquery'), '1.0.0',  true );
+	wp_enqueue_script( 'prefix-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array('jquery'), '1.0.0',  true );
 }
 
 // Enqueue CSS files
@@ -37,20 +47,21 @@ function prefix_enqueue_styles() {
 }
 
 /**
- * Add custom body class to the head
- */
-add_filter( 'body_class', 'prefix_global_body_class' );
-function prefix_global_body_class( $classes ) {
-	$classes[] = 'no-js';
-	return $classes;
-}
-
-/**
  * Include all php files in the /includes/ directory
  *
  * https://gist.github.com/theandystratton/5924570
  */
 foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) { include $file; }
+
+// Add custom body class to the head
+add_filter( 'body_class', 'prefix_global_body_class' );
+function prefix_global_body_class( $classes ) {
+	$classes[] = 'no-js';
+	if ( is_singular() ) {
+		$classes[] = 'singular';
+	}
+	return $classes;
+}
 
 // Customize the entry meta in the entry header
 add_filter( 'genesis_post_info', 'prefix_post_info_filter' );

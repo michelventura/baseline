@@ -8,7 +8,7 @@ add_filter( 'supersideme_button_options', 'prefix_modify_button_options' );
 function prefix_modify_button_options( $button ) {
 	$button['button_color'] = '';
 	$button['function']		= 'append';
-	$button['location']     = '.site-header .wrap';
+	$button['location']     = '.header-content';
 	$button['position']     = 'relative';
 	$button['width']        = 'auto';
 	return $button;

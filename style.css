@@ -3,10 +3,10 @@
  * Description: Baseline is a custom child theme for The Genesis Framework.
  * Author: Mike Hemberger
  * Author URI: http://thestizmedia.com/
- * Version: 2.4.0
+ * Version: 2.5.0
  *
  * Template: genesis
- * Baseline Version: 2.4.0
+ * Baseline Version: 2.5.0
  *
  * License: GPL-2.0+
  * License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -57,6 +57,8 @@
 	- Sidebars
 	- Footer Widgets
 	- Site Footer
+	- Page Templates
+		- Landing Page
 	- Media Queries
 		- max-width: 1159px
 		- max-width: 1023px
@@ -97,8 +99,8 @@ input[type="search"] {
 .site-header::before,
 .site-inner::before,
 .wrap::before {
-	content: " ";
-	display: table;
+	/* content: " "; */
+	/* display: table; */
 }
 
 .archive-pagination::after,
@@ -113,9 +115,9 @@ input[type="search"] {
 .site-header::after,
 .site-inner::after,
 .wrap::after {
-	clear: both;
-	content: " ";
-	display: table;
+	/* clear: both; */
+	/* content: " "; */
+	/* display: table; */
 }
 
 
@@ -552,13 +554,24 @@ td {
 /* ## Site Containers
 --------------------------------------------- */
 
+.site-container {
+	display: -ms-flexbox;display: flex;
+	-ms-flex-direction: column;flex-direction: column;
+	min-height: 100vh; /* forces footer to bottom when not enough content to fill the window */
+}
+
+.admin-bar .site-container {
+	min-height: calc(100vh - 32px);
+}
+
 .site-inner,
 .wrap {
-	max-width: 1160px;
+	width: 100%;
+	max-width: 1200px;
 }
 
 .site-inner {
-	clear: both;
+	-ms-flex: 1;flex: 1;
 	margin: 20px auto 40px;
 	overflow: hidden;
 }
@@ -576,18 +589,15 @@ td {
 	padding-right: 0;
 }
 
-.baseline-landing .site-inner {
-	margin: 20px auto 40px;
-	max-width: 960px;
-}
-
 .wrap {
 	margin: 0 auto;
 }
 
-.baseline-landing h1 {
-	text-align: center;
-	margin-bottom: 80px;
+.content-sidebar-wrap {
+	display: -ms-flexbox;display: flex;
+	-ms-flex-direction: row;flex-direction: row;
+	-ms-flex-wrap: nowrap;flex-wrap: nowrap;
+	-ms-flex-pack: justify;justify-content: space-between;
 }
 
 /* ## Column Widths and Positions
@@ -598,47 +608,114 @@ td {
 /* Content */
 
 .content {
-	float: right;
-	width: 66%;
-}
-
-.content-sidebar .content {
-	float: left;
+	-ms-flex: 1 1 100%;flex: 1 1 100%;
 }
 
 .full-width-content .content {
-	float: none;
 	width: 100%;
 }
 
 .xs-content .content,
+.xs-content .breadcrumb,
 .sm-content .content,
-.md-content .content {
-	float: none;
-	margin: 0 auto;
+.sm-content .breadcrumb,
+.md-content .content,
+.md-content .breadcrumb {
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.xs-content .content {
+.xs-content .content,
+.xs-content .breadcrumb {
 	max-width: 400px;
 }
 
-.sm-content .content {
+.sm-content .content,
+.sm-content .breadcrumb {
 	max-width: 650px;
 }
 
-.md-content .content {
+.md-content .content,
+.md-content .breadcrumb {
 	max-width: 800px;
 }
 
-/* Primary Sidebar */
+/* Sidebars */
 
 .sidebar-primary {
-	float: right;
-	width: 32%;
+	max-width: 30%;
+	-ms-flex: 1 0 30%;flex: 1 0 30%;
 }
 
+.sidebar-secondary {
+	max-width: 18%;
+	-ms-flex: 1 0 18%;flex: 1 0 18%;
+}
+
+/* Layouts */
+
+/* Content-Sidebar */
+
+.content-sidebar .sidebar-primary {
+	margin-left: 2%;
+}
+
+/* Sidebar-Content */
+
 .sidebar-content .sidebar-primary {
-	float: left;
+	-ms-flex-order: -1;order: -1;
+	margin-right: 2%;
+}
+
+/* Sidebar-Content-Sidebar */
+
+.sidebar-content-sidebar .sidebar-primary {
+	margin-left: 2%;
+}
+
+.sidebar-content-sidebar .sidebar-secondary {
+	-ms-flex-order: -1;order: -1;
+	margin-right: 2%;
+}
+
+/* Content-Sidebar-Sidebar */
+
+.content-sidebar-sidebar .sidebar-primary {
+	margin-left: 2%;
+}
+
+.content-sidebar-sidebar .sidebar-secondary {
+	margin-left: 2%;
+}
+
+/* Sidebar-Sidebar-Content */
+
+.sidebar-sidebar-content .sidebar-primary {
+	-ms-flex-order: -1;order: -1;
+	margin-right: 2%;
+}
+
+.sidebar-sidebar-content .sidebar-secondary {
+	-ms-flex-order: -2;order: -2;
+	margin-right: 2%;
+}
+
+@media only screen and (max-width: 1023px) {
+
+	.content-sidebar .sidebar-primary,
+	.sidebar-content .sidebar-primary,
+	.sidebar-content-sidebar .sidebar-primary,
+	.sidebar-content-sidebar .sidebar-secondary,
+	.content-sidebar-sidebar .sidebar-primary,
+	.content-sidebar-sidebar .sidebar-secondary,
+	.sidebar-sidebar-content .sidebar-primary,
+	.sidebar-sidebar-content .sidebar-secondary {
+		max-width: 100%;
+		-ms-flex: 1 0 100%;flex: 1 0 100%;
+		-ms-flex-order: 0;order: 0;
+		margin: 2% 0 0;
+	}
+
 }
 
 /*
@@ -756,7 +833,7 @@ img.alignright,
 
 .breadcrumb {
 	font-size: 14px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 .breadcrumb a {
@@ -915,10 +992,6 @@ img#wpstats {
 .title-area {
 }
 
-.baseline-landing .title-area {
-	margin: 0 auto;
-}
-
 .site-title {
 	margin-bottom: 0;
 }
@@ -992,26 +1065,30 @@ img#wpstats {
 }
 
 .genesis-nav-menu .sub-menu {
-	left: -9999px;
-	opacity: 0;
-	position: absolute;
-	transition:         opacity .4s ease-in-out;
 	width: 240px;
+	left: -9999px;
+	position: absolute;
+	transition: opacity .4s ease-in-out;
+	opacity: 0;
 	z-index: 99;
 }
 
 .genesis-nav-menu .sub-menu a {
+	width: 240px;
 	background-color: #111;
-	border: 1px solid #222;
+	border: 1px solid rgba(0,0,0,0.1);
 	border-top: none;
 	font-size: 14px;
 	padding: 12px 18px;
 	position: relative;
-	width: 240px;
+}
+
+.genesis-nav-menu .sub-menu a:first-of-type {
+	border-top: 1px solid rgba(0,0,0,0.1);
 }
 
 .genesis-nav-menu .sub-menu a:hover {
-	background: #222;
+	background-color: #222;
 	color: #fff;
 }
 
@@ -1046,7 +1123,7 @@ img#wpstats {
 .nav-header a {
 	color: #252525;
 	padding: 8px 4px;
-	margin: 0 20px;
+	margin: 0 14px;
 }
 
 .nav-header a:hover,
@@ -1056,19 +1133,15 @@ img#wpstats {
 	color: #067CCC;
 }
 
-.nav-header .sub-menu .current-menu-item > a {
-	color: #999;
-}
-
 .nav-header .sub-menu a {
+	background-color: #fff;
 }
 
 .nav-header .sub-menu a:hover,
 .nav-header .sub-menu .current-menu-item > a,
 .nav-header .sub-menu .current-menu-item > a:hover {
-}
-
-.nav-header .sub-menu .current-menu-item > a {
+	background-color: #f4f4f4;
+	color: #067CCC;
 }
 
 .site-header .sub-menu .sub-menu {
@@ -1180,6 +1253,11 @@ button.slide-nav-link .label {
 	background: #fff;
 }
 
+.sidr .sidr-inner .menu-close {
+	display: -ms-flexbox;display: flex;
+    -ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
+}
+
 .sidr .search-me .search-form input[type="search"] {
 	display: block;
 	width: 92%;
@@ -1244,8 +1322,8 @@ button.slide-nav-link .label {
 	padding: 4%;
 }
 
-.entry-content {
-	/* overflow: hidden; */
+.singular .entry {
+	margin-bottom: 0;
 }
 
 .entry-content a {
@@ -1534,20 +1612,18 @@ li.comment {
 .footer-widgets {
 	background-color: #333;
 	color: #999;
-	clear: both;
 	padding: 20px 16px;
 }
 
 .footer-widgets .wrap {
 	display: -ms-flexbox;display: flex;
 	-ms-flex-pack: justify;justify-content: space-between;
-	-ms-flex-wrap: wrap;flex-wrap: wrap;
+	/* -ms-flex-wrap: wrap;rflex-wrap: wrap; */
 }
 
 .footer-widgets .widget-area {
-	-ms-flex-preferred-size: 32.222222222222%;flex-basis: 32.222222222222%;
-    max-width: 32.222222222222%;
-	padding: 10px;
+	width: 100%;
+	padding: 20px;
 	margin: 20px 0;
 }
 
@@ -1602,6 +1678,30 @@ li.comment {
 	color: #fff;
 }
 
+/*
+# Page Templates
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Landing Page
+--------------------------------------------- */
+
+.prefix-landing .site-inner {
+	margin: 20px auto 40px;
+	max-width: 960px;
+}
+
+.prefix-landing .site-header .wrap {
+	-ms-flex-pack: center;justify-content: center;
+}
+
+.prefix-landing .title-area {
+	margin: 0 auto;
+}
+
+.prefix-landing h1 {
+	text-align: center;
+	margin-bottom: 80px;
+}
 
 /*
 # Media Queries
@@ -1614,6 +1714,10 @@ li.comment {
 
 @media only screen and (max-width: 1023px) {
 
+	.content-sidebar-wrap {
+		-ms-flex-direction: column;flex-direction: column;
+	}
+
 	.content,
 	.sidebar-primary,
 	.site-inner,
@@ -1624,11 +1728,6 @@ li.comment {
 }
 
 @media only screen and (max-width: 768px) {
-
-	.js .header-content {
-		display: none;
-		visibility: hidden;
-	}
 
 	.js button.slide-nav-link {
 		display: -ms-flexbox;display: flex;

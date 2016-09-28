@@ -1,7 +1,7 @@
 <?php
-/*
-Template Name: Landing Page
-*/
+/**
+ * Template Name: Landing Page
+ */
 
 // Add custom body class to the head
 add_filter( 'body_class', 'prefix_add_body_class' );
