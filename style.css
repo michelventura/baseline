@@ -18,7 +18,6 @@
 	- HTML5 Reset
 		- Baseline Normalize
 		- Box Sizing
-		- Float Clearing
 	- Defaults
 		- Typographical Elements
 		- Screen reader text
@@ -80,46 +79,9 @@ progress,sub,sup{vertical-align:baseline}button,hr,input{overflow:visible}[type=
 
 *,
 input[type="search"] {
-	box-sizing:         border-box;
+	box-sizing: border-box;
 	-webkit-appearance: none;
 }
-
-/* Float Clearing
---------------------------------------------- */
-
-.archive-pagination::before,
-.clearfix::before,
-.entry::before,
-.entry-pagination::before,
-.footer-widgets::before,
-.nav-primary::before,
-.nav-secondary::before,
-.site-container::before,
-.site-footer::before,
-.site-header::before,
-.site-inner::before,
-.wrap::before {
-	/* content: " "; */
-	/* display: table; */
-}
-
-.archive-pagination::after,
-.clearfix::after,
-.entry::after,
-.entry-pagination::after,
-.footer-widgets::after,
-.nav-primary::after,
-.nav-secondary::after,
-.site-container::after,
-.site-footer::after,
-.site-header::after,
-.site-inner::after,
-.wrap::after {
-	/* clear: both; */
-	/* content: " "; */
-	/* display: table; */
-}
-
 
 /*
 Defaults
