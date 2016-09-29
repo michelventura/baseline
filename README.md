@@ -6,7 +6,7 @@
 
 (Mostly for my team at [BizBudding Inc.](https://bizbudding.com/))
 
-1. Change the theme name to match the domain (example-site.com) would be /genesis/example-site/
+1. Change the theme directory name to match the domain (example-site.com) would be /genesis/example-site/
 1. Change theme name at the top of style.css and functions.php
 1. Change version number in style.css and functions.php (leave Baseline version number in style.css)
 1. Change theme URL in functions.php, if needed
