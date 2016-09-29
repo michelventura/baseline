@@ -5,7 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'http://thestizmedia.com/' );
-define( 'CHILD_THEME_VERSION', '2.5.0' );
+define( 'CHILD_THEME_VERSION', '2.5.1' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
@@ -42,8 +42,8 @@ function prefix_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'prefix_enqueue_styles' );
 function prefix_enqueue_styles() {
 	wp_enqueue_style( 'prefix-google-fonts', '//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700,700italic|Roboto+Condensed:400,700', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0' );
-	wp_enqueue_style( 'flexgrid', get_stylesheet_directory_uri() . '/assets/css/flexgrid.min.css', array(), '2.0.0' );
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', array(), '4.6.3' );
+	wp_enqueue_style( 'flexington', get_stylesheet_directory_uri() . '/assets/css/flexington.min.css', array(), '2.1.0' );
 }
 
 /**
@@ -94,7 +94,7 @@ function prefix_custom_footer_creds_text( $text ) {
 }
 
 // Change login logo
-add_action('login_head',  'prefix_custom_dashboard_logo');
+add_action( 'login_head',  'prefix_custom_dashboard_logo' );
 function prefix_custom_dashboard_logo() {
 	echo '<style  type="text/css">
 		.login h1 a {
@@ -108,7 +108,7 @@ function prefix_custom_dashboard_logo() {
 }
 
 // Change login link
-add_filter('login_headerurl','prefix_loginpage_custom_link');
+add_filter( 'login_headerurl', 'prefix_loginpage_custom_link' );
 function prefix_loginpage_custom_link() {
 	return get_site_url();
 }

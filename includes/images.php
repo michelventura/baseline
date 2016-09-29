@@ -24,6 +24,24 @@ function prefix_do_media_chooser_sizes( $sizes ) {
 // Turn off gallery CSS
 add_filter( 'use_default_gallery_style', '__return_false' );
 
+/**
+ * Remove unsupported FlexGrid gallery options from admin
+ *
+ * @return void
+ */
+add_action( 'admin_head', 'prefix_remove_unsupported_flexgrid_gallery_options' );
+function prefix_remove_unsupported_flexgrid_gallery_options() {
+    echo '<style type="text/css">
+        .gallery-settings .columns option[value="5"],
+        .gallery-settings .columns option[value="7"],
+        .gallery-settings .columns option[value="8"],
+        .gallery-settings .columns option[value="9"] {
+            display:none !important;
+            visibility: hidden !important;
+        }
+        </style>';
+}
+
 // Add featured image to single posts
 // add_action( 'genesis_entry_content', 'prefix_do_entry_featured_image', 8 );
 function prefix_do_entry_featured_image() {
