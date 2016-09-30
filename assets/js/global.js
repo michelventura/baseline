@@ -16,6 +16,7 @@ jQuery(function( $ ) {
 
     // On click of the search button
     $('body').on( 'click', '#search-btn', function(e){
+        e.preventDefault()
         // Close if the button has open class, otherwise open
     	if ( $(this).hasClass('search-btn-open') ) {
 			searchClose();
@@ -26,6 +27,7 @@ jQuery(function( $ ) {
 
     // Close search if close button clicked
     $('#search-box').on( 'click', '.search-close', function(e){
+        e.preventDefault()
         searchClose();
     });
 
