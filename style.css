@@ -911,8 +911,18 @@ img#wpstats {
 
 @media only screen and (max-width: 1023px) {
 
+	/* These center the logo, header nav, and primary nav */
+
 	.site-header .wrap {
 		-ms-flex-direction: column;flex-direction: column;
+	}
+
+	.nav-primary .menu-item:first-of-type {
+		margin-left: auto;
+	}
+
+	.nav-primary .menu-item:last-of-type {
+		margin-right: auto;
 	}
 
 }
