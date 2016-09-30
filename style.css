@@ -1062,9 +1062,7 @@ img#wpstats {
 /* ## Header Navigation
 --------------------------------------------- */
 
-.nav-header {
-}
-
+.home .nav-header .current-menu-item > a,
 .nav-header a {
 	color: #252525;
 	padding: 8px 4px;
@@ -1109,10 +1107,14 @@ img#wpstats {
 --------------------------------------------- */
 
 .home .nav-primary .current-menu-item > a,
-.menu-toggle.primary-toggle,
 .nav-primary {
 	background-color: #252525;
 	border-radius: 0;
+}
+
+.nav-primary .wrap {
+	padding-left: 3%;
+	padding-right: 3%;
 }
 
 .nav-primary a {
@@ -1145,16 +1147,25 @@ img#wpstats {
 /* ## Secondary Navigation
 --------------------------------------------- */
 
-.menu-toggle.secondary-toggle,
 .nav-secondary {
 	background-color: #252525;
 	border-radius: 0;
 }
 
-.nav-secondary {
-	text-align: center;
+.nav-secondary .wrap {
+	padding-left: 3%;
+	padding-right: 3%;
 }
 
+.nav-secondary .menu-item:first-of-type {
+	margin-left: auto;
+}
+
+.nav-secondary .menu-item:last-of-type {
+	margin-right: auto;
+}
+
+.home .nav-secondary .current-menu-item > a,
 .nav-secondary a {
 	color: #e4e4e4;
 }
