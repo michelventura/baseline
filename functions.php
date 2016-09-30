@@ -36,6 +36,10 @@ add_theme_support( 'genesis-accessibility', array(
 add_action( 'wp_enqueue_scripts', 'prefix_enqueue_scripts' );
 function prefix_enqueue_scripts() {
 	wp_enqueue_script( 'prefix-global', get_stylesheet_directory_uri() . '/assets/js/global.js', array('jquery'), '1.0.0',  true );
+	wp_localize_script( 'prefix-global', 'prefix_global_vars', array(
+		'search_btn' => prefix_get_search_btn(),
+		'search_box' => prefix_get_search_box(),
+	) );
 }
 
 // Enqueue CSS files

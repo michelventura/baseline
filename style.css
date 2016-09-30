@@ -51,6 +51,7 @@
 		- Primary Navigation
 		- Secondary Navigation
 		- Mobile Navigation
+		- Search Box
 	- Content Area
 		- Front Page
 		- Entries
@@ -383,7 +384,7 @@ input[type="submit"],
 	width: auto;
 	text-align: center;
 	text-transform: uppercase;
-	padding: 16px 24px;
+	padding: 12px 24px;
 	border: none;
 	border-radius: 3px;
 	box-shadow: none;
@@ -713,7 +714,7 @@ td {
 	margin-left: 24px;
 }
 
-.search-form input[type="submit"] {
+.site-inner .search-form input[type="submit"] {
 	border: 0;
 	clip: rect(0, 0, 0, 0);
 	height: 1px;
@@ -1154,6 +1155,10 @@ img#wpstats {
 .nav-primary .sub-menu .current-menu-item > a {
 }
 
+.nav-primary .menu-item.search {
+	margin-left: auto;
+}
+
 /* ## Secondary Navigation
 --------------------------------------------- */
 
@@ -1273,6 +1278,76 @@ button.slide-nav-link .label {
 	padding: 0;
 	position: absolute;
 	width: 1px;
+}
+
+/* ## Search Box
+--------------------------------------------- */
+
+#search-btn {
+	position: relative;
+	min-width: 50px;
+}
+
+#search-btn::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	content: "\f002";
+	font-family: FontAwesome;
+	font-size: 20px;
+	-webkit-font-smoothing: antialiased;
+}
+
+#search-btn:hover {
+	/* background-color: transparent; */
+	cursor: pointer;
+}
+
+#search-box {
+	background-color: #303030;
+}
+
+#search-box .wrap {
+	display: -webkit-box;display: -ms-flexbox;display: flex;
+	-ms-flex-wrap: wrap;flex-wrap: wrap;
+	-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;
+	-webkit-box-align: center;-ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
+	max-width: 600px;
+	padding: 40px 3%;
+	margin: 0 auto;
+}
+
+#search-box .search-desc {
+	-webkit-box-flex: 1;-ms-flex: 1 1 100%;flex: 1 1 100%;
+	color: #fff;
+	text-align: center;
+    margin-bottom: 10px;
+}
+
+#search-box .search-form {
+	display: -webkit-box;display: -ms-flexbox;display: flex;
+	border-radius: 3px;
+    overflow: hidden;
+}
+
+#search-box input[type="search"] {
+    border: 3px solid #fff;
+    border-radius: 0;
+}
+
+#search-box input[type="submit"] {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#search-box input[type="submit"]:hover {
+}
+
+#search-box .search-close {
+	-webkit-box-flex: 0;-ms-flex: 0 0 auto;flex: 0 0 auto;
+	color: red;
+	padding: 6px 12px;
 }
 
 /*
