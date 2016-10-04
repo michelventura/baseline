@@ -10,9 +10,6 @@ function prefix_add_sitemap_body_class( $classes ) {
    return $classes;
 }
 
-// Remove standard post content output
-remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
-
 // Filter the default sitemap items and add any publically registered post types to the variable
 add_filter( 'genesis_sitemap_output', 'prefix_filter_genesis_sitemap_output' );
 function prefix_filter_genesis_sitemap_output( $sitemap ) {
