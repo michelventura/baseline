@@ -16,7 +16,7 @@ function prefix_do_header_nav() {
 
 // Reposition the secondary navigation menu
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_before_footer', 'genesis_do_subnav', 5 );
+add_action( 'genesis_before_footer', 'genesis_do_subnav' );
 
 // Get the search button
 function prefix_get_search_btn() {

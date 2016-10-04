@@ -7,6 +7,10 @@
     document.body.className = c;
 })();
 
+/**
+ * Display a search icon and hidden search box
+ * Show search box on click, and other trickery
+ */
 jQuery(function( $ ) {
 	'use strict';
 
@@ -59,4 +63,21 @@ jQuery(function( $ ) {
 		$('#search-box').slideUp('fast');
 	}
 
+});
+
+/**
+ * Initialise Superfish with custom arguments.
+ *
+ * @package Genesis\JS
+ * @author StudioPress
+ * @license GPL-2.0+
+ */
+jQuery(function ($) {
+    'use strict';
+    $('.js-superfish').superfish({
+        'delay': 100,
+        'speed': 'fast',
+        'animation':   {'opacity': 'show', 'height': 'show'},
+        'dropShadows': false
+    });
 });

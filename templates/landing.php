@@ -18,7 +18,7 @@ remove_action( 'genesis_header', 'prefix_do_header_nav', 12 );
 
 // Remove navigation
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-remove_action( 'genesis_before_footer', 'genesis_do_subnav', 5 );
+remove_action( 'genesis_before_footer', 'genesis_do_subnav' );
 
 // Remove breadcrumbs
 remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs' );

@@ -6,7 +6,7 @@
 // genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 // Unregister secondary sidebar
-unregister_sidebar( 'sidebar-alt' );
+// unregister_sidebar( 'sidebar-alt' );
 unregister_sidebar( 'header-right' );
 
 // Remove the edit link
@@ -22,3 +22,16 @@ function prefix_remove_page_templates( $templates ) {
 
 // Disable the Genesis Favicon
 remove_action( 'wp_head', 'genesis_load_favicon' );
+
+/**
+ * Remove default Superfish arguments
+ * They are now added in global.js
+ *
+ * @author Gary Jones
+ * @link   http://code.garyjones.co.uk/change-superfish-arguments
+ *
+ * @param string $url Existing URL.
+ *
+ * @return string Amended URL.
+ */
+add_filter( 'genesis_superfish_args_url', '__return_false' );
