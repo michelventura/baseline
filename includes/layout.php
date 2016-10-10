@@ -40,7 +40,7 @@ add_filter( 'genesis_footer_widget_areas', 'prefix_footer_widget_flexington_cols
 function prefix_footer_widget_flexington_cols( $output, $footer_widgets ) {
     switch ( $footer_widgets ) {
         case '1':
-            $classes = 'widget-area col col-xs-12"';
+            $classes = 'widget-area col col-xs-12 center-xs"';
             break;
         case '2':
             $classes = 'widget-area col col-xs-12 col-sm-6"';
