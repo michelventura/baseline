@@ -5,7 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'https://bizbudding.com/' );
-define( 'CHILD_THEME_VERSION', '2.5.4' );
+define( 'CHILD_THEME_VERSION', '2.5.4.1' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
@@ -99,7 +99,7 @@ add_filter( 'genesis_footer_creds_text', 'prefix_custom_footer_creds_text' );
 function prefix_custom_footer_creds_text( $text ) {
     $text = '';
     $text .= '<div class="creds">';
-    	$text .= '<p>Copyright &copy; ' . date('Y') . ' <a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('name') . '">' . get_bloginfo('name') . '</a> &middot; All Rights Reserved &middot; Website by <a rel="nofollow" href="http://bizbudding.com" title="BizBudding Inc.">BizBudding Inc.</a></p>';
+    	$text .= '<p>Copyright &copy; ' . date('Y') . ' <a href="' . get_bloginfo('url') . '" title="' . get_bloginfo('name') . '">' . get_bloginfo('name') . '</a> &middot; All Rights Reserved &middot; Powered by <a rel="nofollow" href="https://bizbudding.com" title="BizBudding Inc.">BizBudding Inc.</a></p>';
 	$text .= '</div>';
 	return $text;
 }

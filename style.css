@@ -3,10 +3,10 @@
  * Description: 		Baseline is a custom child theme for The Genesis Framework.
  * Author: 				Mike Hemberger
  * Author URI: 			http://thestizmedia.com/
- * Version: 			2.5.4
+ * Version: 			2.5.4.1
  *
  * Template: 			genesis
- * Baseline 			Version: 2.5.4
+ * Baseline 			Version: 2.5.4.1
  *
  * License: 			GPL-2.0+
  * License URI: 		http://www.opensource.org/licenses/gpl-license.php
@@ -1670,21 +1670,52 @@ li.comment {
 .footer-widgets {
 	background-color: #333;
 	color: #999;
-	padding: 20px 16px;
+	padding: 30px 0;
 }
 
 .footer-widgets .wrap {
-	display: -ms-flexbox;display: flex;
-	-ms-flex-pack: justify;justify-content: space-between;
+	padding-left: 3%;
+	padding-right: 3%;
 }
 
+/**
+ * Use these until Genesis can filter the individual footer widget-areas
+ * 4 widgets: calc( 25% - 30px );
+ * 3 widgets: calc( 33.33333333% - 30px );
+ * 2 widgets: calc( 50% - 30px );
+ */
 .footer-widgets .widget-area {
-	width: 100%;
-	padding: 20px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -ms-flex-preferred-size: calc( 25% - 30px );
+    flex-basis: calc( 25% - 30px );
+    max-width: calc( 25% - 30px );
+	margin-left: 30px;
+}
+
+@media only screen and (max-width: 1023px) {
+
+	.footer-widgets .widget-area {
+	    -ms-flex-preferred-size: calc( 50% - 30px );
+	    flex-basis: calc( 50% - 30px );
+	    max-width: calc( 50% - 30px );
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+	.footer-widgets .widget-area {
+	    -ms-flex-preferred-size: calc( 100% - 30px );
+	    flex-basis: calc( 100% - 30px );
+	    max-width: calc( 100% - 30px );
+	}
+
 }
 
 .footer-widgets .widget {
-	margin: 30px 0;
+	margin-bottom: 30px;
 }
 
 .footer-widgets a {
@@ -1693,9 +1724,6 @@ li.comment {
 
 .footer-widgets a:hover {
 	color: #ddd;
-}
-
-.footer-widgets .widget {
 }
 
 .footer-widgets .widget-title {
@@ -1793,11 +1821,6 @@ li.comment {
 	.js button.slide-nav-link {
 		display: -ms-flexbox;display: flex;
 		visibility: visible;
-	}
-
-	.footer-widgets .widget-area {
-		-ms-flex-preferred-size: 100%;flex-basis: 100%;
-	    max-width: 100%;
 	}
 
 	div.gform_wrapper textarea.medium,
