@@ -1685,21 +1685,21 @@ li.comment {
  * 2 widgets: calc( 50% - 30px );
  */
 .footer-widgets .widget-area {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    -ms-flex-preferred-size: calc( 25% - 30px );
-    flex-basis: calc( 25% - 30px );
-    max-width: calc( 25% - 30px );
-	margin-left: 30px;
+    /* -webkit-box-flex: 0; */
+    /* -ms-flex: 0 0 auto; */
+    /* flex: 0 0 auto; */
+    /* -ms-flex-preferred-size: calc( 25% - 30px ); */
+    /* flex-basis: calc( 25% - 30px ); */
+    /* max-width: calc( 25% - 30px ); */
+	/* margin-left: 30px; */
 }
 
 @media only screen and (max-width: 1023px) {
 
 	.footer-widgets .widget-area {
-	    -ms-flex-preferred-size: calc( 50% - 30px );
-	    flex-basis: calc( 50% - 30px );
-	    max-width: calc( 50% - 30px );
+	    /* -ms-flex-preferred-size: calc( 50% - 30px ); */
+	    /* flex-basis: calc( 50% - 30px ); */
+	    /* max-width: calc( 50% - 30px ); */
 	}
 
 }
@@ -1707,9 +1707,9 @@ li.comment {
 @media only screen and (max-width: 768px) {
 
 	.footer-widgets .widget-area {
-	    -ms-flex-preferred-size: calc( 100% - 30px );
-	    flex-basis: calc( 100% - 30px );
-	    max-width: calc( 100% - 30px );
+	    /* -ms-flex-preferred-size: calc( 100% - 30px ); */
+	    /* flex-basis: calc( 100% - 30px ); */
+	    /* max-width: calc( 100% - 30px ); */
 	}
 
 }
