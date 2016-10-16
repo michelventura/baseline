@@ -109,7 +109,7 @@ add_action( 'login_head',  'prefix_custom_dashboard_logo' );
 function prefix_custom_dashboard_logo() {
 	echo '<style  type="text/css">
 		.login h1 a {
-			background-image:url(' . get_stylesheet_directory_uri() . '/images/logo@2x.png)  !important;
+			background-image:url(' . get_stylesheet_directory_uri() . '/images/logo@2x.png) !important;
 			background-size: contain !important;
 			width: 100% !important;
 			max-width: 300px !important;
