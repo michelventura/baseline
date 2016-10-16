@@ -9,6 +9,78 @@ add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs' );
 remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
 add_action( 'genesis_after_content', 'genesis_get_sidebar_alt', 11 );
 
+// Add new layout options
+add_action( 'init', 'prefix_add_genesis_layouts' );
+function prefix_add_genesis_layouts() {
+    // Medium Content
+    genesis_register_layout( 'md-content', array(
+        'label' => __( 'Medium Content', 'baseline' ),
+        'img'   => get_stylesheet_directory_uri() . '/assets/images/layouts/mdc.gif'
+    ) );
+    // Small Content
+    genesis_register_layout( 'sm-content', array(
+        'label' => __( 'Small Content', 'baseline' ),
+        'img'   => get_stylesheet_directory_uri() . '/assets/images/layouts/smc.gif'
+    ) );
+    // Extra Small Content
+    genesis_register_layout( 'xs-content', array(
+        'label' => __( 'Extra Small Content', 'baseline' ),
+        'img'   => get_stylesheet_directory_uri() . '/assets/images/layouts/xsc.gif'
+    ) );
+}
+
+// Add flexington row classes to the content sidebar wrap
+add_filter( 'genesis_attr_content-sidebar-wrap', 'prefix_content_sidebar_wrap_flexington_row' );
+function prefix_content_sidebar_wrap_flexington_row( $attributes ) {
+    $align  = '';
+    $gutter = ' gutter-20';
+    // New layouts and templates
+    $layouts   = array( 'md-content', 'sm-content', 'xs-content' );
+    $templates = array( 'landing.php' );
+    // Center and remove gutter
+    if ( in_array( genesis_site_layout(), $layouts ) || in_array( basename( get_page_template() ), $templates ) ) {
+        $align  = ' around-xs';
+        $gutter = '';
+    }
+    $attributes['class'] = $attributes['class'] . ' row' . $align . $gutter;
+    return $attributes;
+}
+
+// Add flexington column classes to the content
+add_filter( 'genesis_attr_content', 'prefix_content_flexington_cols' );
+function prefix_content_flexington_cols( $attributes ) {
+    $attributes['class'] = $attributes['class'] . ' col col-xs';
+    return $attributes;
+}
+
+// Add flexington column classes to the primary sidebar
+add_filter( 'genesis_attr_sidebar-primary', 'prefix_sidebar_primary_flexington_cols' );
+function prefix_sidebar_primary_flexington_cols( $attributes ) {
+    $attributes['class'] = $attributes['class'] . ' col col-xs-12 col-md-4';
+    return $attributes;
+}
+
+// Add flexington column classes to the secondary sidebar
+add_filter( 'genesis_attr_sidebar-secondary', 'prefix_sidebar_secondary_flexington_cols' );
+function prefix_sidebar_secondary_flexington_cols( $attributes ) {
+    $attributes['class'] = $attributes['class'] . ' col col-xs-12 col-md-2';
+    return $attributes;
+}
+
+// Remove the sidebar for our custom content layouts
+add_action( 'genesis_before', 'prefix_maybe_remove_sidebar' );
+function prefix_maybe_remove_sidebar() {
+
+    $layouts = array( 'md-content', 'sm-content', 'xs-content' );
+
+    if ( ! in_array( genesis_site_layout(), $layouts ) ) {
+        return;
+    }
+    // Remove sidebars
+    remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+    remove_action( 'genesis_after_content', 'genesis_get_sidebar_alt', 11 );
+}
+
 /**
  * Filter the footer-widgets context of the genesis_structural_wrap to add a div before the closing wrap div.
  *
