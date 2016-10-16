@@ -10,9 +10,6 @@ function prefix_add_body_class( $classes ) {
    return $classes;
 }
 
-// Force full width content layout
-add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
-
 // Remove site header elements
 remove_action( 'genesis_header', 'prefix_do_header_nav', 12 );
 
