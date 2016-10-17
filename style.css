@@ -572,6 +572,10 @@ td {
 	overflow: hidden;
 }
 
+.wrap {
+	margin: 0 auto;
+}
+
 .site-inner,
 .site-header .wrap,
 .nav-primary .wrap,
@@ -597,8 +601,8 @@ td {
 	padding-right: 0;
 }
 
-.wrap {
-	margin: 0 auto;
+.home .content {
+	margin-bottom: 0;
 }
 
 /* ## Column Widths and Positions
