@@ -3,10 +3,10 @@
  * Description: 		Baseline is a custom child theme for The Genesis Framework.
  * Author: 				Mike Hemberger
  * Author URI: 			http://thestizmedia.com/
- * Version: 			2.5.4.2
+ * Version: 			2.5.5
  *
  * Template: 			genesis
- * Baseline 			Version: 2.5.4.2
+ * Baseline 			Version: 2.5.5
  *
  * License: 			GPL-2.0+
  * License URI: 		http://www.opensource.org/licenses/gpl-license.php
@@ -589,27 +589,10 @@ td {
 	margin: 0 auto;
 }
 
-.content-sidebar-wrap {
-	display: -ms-flexbox;display: flex;
-	-ms-flex-direction: row;flex-direction: row;
-	-ms-flex-wrap: nowrap;flex-wrap: nowrap;
-	-ms-flex-pack: justify;justify-content: space-between;
-}
-
 /* ## Column Widths and Positions
 --------------------------------------------- */
 
-/* Wrapping div for .content and .sidebar-primary */
-
 /* Content */
-
-.content {
-	-ms-flex: 1 1 100%;flex: 1 1 100%;
-}
-
-.full-width-content .content {
-	width: 100%;
-}
 
 .xs-content .content,
 .xs-content .breadcrumb,
@@ -634,84 +617,6 @@ td {
 .md-content .content,
 .md-content .breadcrumb {
 	max-width: 800px;
-}
-
-/* Sidebars */
-
-.sidebar-primary {
-	max-width: 30%;
-	-ms-flex: 1 0 30%;flex: 1 0 30%;
-}
-
-.sidebar-secondary {
-	max-width: 18%;
-	-ms-flex: 1 0 18%;flex: 1 0 18%;
-}
-
-/* Layouts */
-
-/* Content-Sidebar */
-
-.content-sidebar .sidebar-primary {
-	margin-left: 2%;
-}
-
-/* Sidebar-Content */
-
-.sidebar-content .sidebar-primary {
-	-ms-flex-order: -1;order: -1;
-	margin-right: 2%;
-}
-
-/* Sidebar-Content-Sidebar */
-
-.sidebar-content-sidebar .sidebar-primary {
-	margin-left: 2%;
-}
-
-.sidebar-content-sidebar .sidebar-secondary {
-	-ms-flex-order: -1;order: -1;
-	margin-right: 2%;
-}
-
-/* Content-Sidebar-Sidebar */
-
-.content-sidebar-sidebar .sidebar-primary {
-	margin-left: 2%;
-}
-
-.content-sidebar-sidebar .sidebar-secondary {
-	margin-left: 2%;
-}
-
-/* Sidebar-Sidebar-Content */
-
-.sidebar-sidebar-content .sidebar-primary {
-	-ms-flex-order: -1;order: -1;
-	margin-right: 2%;
-}
-
-.sidebar-sidebar-content .sidebar-secondary {
-	-ms-flex-order: -2;order: -2;
-	margin-right: 2%;
-}
-
-@media only screen and (max-width: 1023px) {
-
-	.content-sidebar .sidebar-primary,
-	.sidebar-content .sidebar-primary,
-	.sidebar-content-sidebar .sidebar-primary,
-	.sidebar-content-sidebar .sidebar-secondary,
-	.content-sidebar-sidebar .sidebar-primary,
-	.content-sidebar-sidebar .sidebar-secondary,
-	.sidebar-sidebar-content .sidebar-primary,
-	.sidebar-sidebar-content .sidebar-secondary {
-		max-width: 100%;
-		-ms-flex: 1 0 100%;flex: 1 0 100%;
-		-ms-flex-order: 0;order: 0;
-		margin: 2% 0 0;
-	}
-
 }
 
 /*
@@ -949,7 +854,7 @@ img#wpstats {
 	padding: 20px 3%;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 992px) {
 
 	/* These center the logo, header nav, and primary nav */
 
@@ -973,12 +878,6 @@ img#wpstats {
 		-ms-flex-direction: row;flex-direction: row;
 	}
 
-}
-
-.site-header .wrap::before,
-.site-header .wrap::after {
-	display: none;
-	visibility: hidden;
 }
 
 /* ## Title Area
@@ -1284,6 +1183,7 @@ button.slide-nav-link .label {
 .sidr .sidr-inner .menu-close {
 	display: -ms-flexbox;display: flex;
     -ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
+    background-color: transparent;
 }
 
 .sidr .search-me .search-form input[type="search"] {
@@ -1345,7 +1245,6 @@ button.slide-nav-link .label {
 }
 
 #search-btn:hover {
-	/* background-color: transparent; */
 	cursor: pointer;
 }
 
@@ -1583,7 +1482,7 @@ button.slide-nav-link .label {
 	margin-bottom: 0;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
 
 	.comment-respond input[type="email"],
 	.comment-respond input[type="text"],
@@ -1678,42 +1577,6 @@ li.comment {
 	padding-right: 3%;
 }
 
-/**
- * Use these until Genesis can filter the individual footer widget-areas
- * 4 widgets: calc( 25% - 30px );
- * 3 widgets: calc( 33.33333333% - 30px );
- * 2 widgets: calc( 50% - 30px );
- */
-.footer-widgets .widget-area {
-    /* -webkit-box-flex: 0; */
-    /* -ms-flex: 0 0 auto; */
-    /* flex: 0 0 auto; */
-    /* -ms-flex-preferred-size: calc( 25% - 30px ); */
-    /* flex-basis: calc( 25% - 30px ); */
-    /* max-width: calc( 25% - 30px ); */
-	/* margin-left: 30px; */
-}
-
-@media only screen and (max-width: 1023px) {
-
-	.footer-widgets .widget-area {
-	    /* -ms-flex-preferred-size: calc( 50% - 30px ); */
-	    /* flex-basis: calc( 50% - 30px ); */
-	    /* max-width: calc( 50% - 30px ); */
-	}
-
-}
-
-@media only screen and (max-width: 768px) {
-
-	.footer-widgets .widget-area {
-	    /* -ms-flex-preferred-size: calc( 100% - 30px ); */
-	    /* flex-basis: calc( 100% - 30px ); */
-	    /* max-width: calc( 100% - 30px ); */
-	}
-
-}
-
 .footer-widgets .widget {
 	margin-bottom: 30px;
 }
@@ -1774,11 +1637,6 @@ li.comment {
 /* ## Landing Page
 --------------------------------------------- */
 
-.prefix-landing .site-inner {
-	margin: 20px auto 40px;
-	max-width: 960px;
-}
-
 .prefix-landing .site-header .wrap {
 	-ms-flex-pack: center;justify-content: center;
 }
@@ -1796,25 +1654,9 @@ li.comment {
 # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (max-width: 1159px) {
+@media only screen and (max-width: 1159px) {}
 
-
-}
-
-@media only screen and (max-width: 1023px) {
-
-	.content-sidebar-wrap {
-		-ms-flex-direction: column;flex-direction: column;
-	}
-
-	.content,
-	.sidebar-primary,
-	.site-inner,
-	.wrap {
-		width: 100%;
-	}
-
-}
+@media only screen and (max-width: 992px) {}
 
 @media only screen and (max-width: 768px) {
 
@@ -1868,6 +1710,6 @@ li.comment {
 
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 544px) {
 
 }
