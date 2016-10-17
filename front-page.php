@@ -12,10 +12,22 @@ remove_action( 'genesis_loop', 'genesis_do_loop' );
 //
 add_action( 'genesis_loop', 'prefix_do_front_page_loop' );
 function prefix_do_front_page_loop() {
+
+	$style = "
+	 	background:
+		    linear-gradient(
+		    	to right,
+				rgba(0, 0, 0, 0.5),
+				rgba(0, 0, 0, 0.5)
+		    ),
+		url('https://unsplash.it/1000/400/?random') no-repeat center;
+		background-size: cover;
+	";
 	?>
-	<div class="home-section">
-		<div class="wrap">
-			<h3 style="text-align:center;">Banner or something pretty here</h3>
+	<div class="home-section" style="<?php echo $style; ?>">
+		<div class="wrap" style="text-align:center;padding:140px 0;">
+			<h2 style="color:#fff">This is a wonderful CTA here</h2>
+			<a class="button" href="#">Do It Now!</a>
 		</div>
 	</div>
 
