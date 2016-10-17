@@ -568,14 +568,26 @@ td {
 
 .site-inner {
 	-ms-flex: 1;flex: 1;
-	margin: 20px auto 40px;
+	margin: 20px auto;
 	overflow: hidden;
 }
 
 .site-inner,
-.site-header .wrap {
+.site-header .wrap,
+.nav-primary .wrap,
+.nav-secondary .wrap,
+#search-box .wrap,
+.footer-widgets .wrap,
+.site-footer .wrap,
+.archive-description {
 	padding-left: 3%;
 	padding-right: 3%;
+}
+
+.content,
+.sidebar,
+.secondary-sidebar {
+	margin-bottom: 30px;
 }
 
 .home .site-inner {
@@ -722,7 +734,8 @@ img.alignright,
 }
 
 .archive-description {
-	padding: 3%;
+	padding-top: 3%;
+	padding-bottom: 3%;
 }
 
 .author-box {
@@ -851,7 +864,8 @@ img#wpstats {
 	-ms-flex-pack: justify;justify-content: space-between;
 	-ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
 	-ms-flex-wrap: wrap;flex-wrap: wrap;
-	padding: 20px 3%;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -1068,11 +1082,6 @@ img#wpstats {
 	border-radius: 0;
 }
 
-.nav-primary .wrap {
-	padding-left: 3%;
-	padding-right: 3%;
-}
-
 .nav-primary a {
 	color: #e4e4e4;
 }
@@ -1110,11 +1119,6 @@ img#wpstats {
 .nav-secondary {
 	background-color: #252525;
 	border-radius: 0;
-}
-
-.nav-secondary .wrap {
-	padding-left: 3%;
-	padding-right: 3%;
 }
 
 .nav-secondary .menu-item:first-of-type {
@@ -1258,7 +1262,8 @@ button.slide-nav-link .label {
 	-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;
 	-webkit-box-align: center;-ms-flex-align: center;-ms-grid-row-align: center;align-items: center;
 	max-width: 600px;
-	padding: 40px 3%;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	margin: 0 auto;
 }
 
@@ -1462,11 +1467,15 @@ button.slide-nav-link .label {
 .entry-comments,
 .entry-pings {
 	background-color: #fff;
-	margin-bottom: 40px;
 }
 
 .entry-comments {
 	padding: 4%;
+}
+
+.entry-comments,
+.entry-pings {
+	margin-bottom: 30px;
 }
 
 .comment-respond,
@@ -1572,11 +1581,6 @@ li.comment {
 	padding: 30px 0;
 }
 
-.footer-widgets .wrap {
-	padding-left: 3%;
-	padding-right: 3%;
-}
-
 .footer-widgets .widget {
 	margin-bottom: 30px;
 }
@@ -1613,7 +1617,8 @@ li.comment {
 	color: #999;
 	font-size: 14px;
 	text-align: center;
-	padding: 40px 3%;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	border-top: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -1663,6 +1668,13 @@ li.comment {
 	.js button.slide-nav-link {
 		display: -ms-flexbox;display: flex;
 		visibility: visible;
+	}
+
+	.entry,
+	.after-entry.widget-area,
+	.entry-comments,
+	.sidebar .widget {
+		padding: 20px;
 	}
 
 	div.gform_wrapper textarea.medium,
