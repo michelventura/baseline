@@ -3,6 +3,9 @@
  * Template Name: Landing Page
  */
 
+// Remove SuperSide Me mobile menu
+add_filter( 'supersideme_override_output', '__return_false' );
+
 // Add custom body class to the head
 add_filter( 'body_class', 'prefix_add_body_class' );
 function prefix_add_body_class( $classes ) {
