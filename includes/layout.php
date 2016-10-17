@@ -33,7 +33,7 @@ function prefix_add_genesis_layouts() {
 add_filter( 'genesis_attr_content-sidebar-wrap', 'prefix_content_sidebar_wrap_flexington_row' );
 function prefix_content_sidebar_wrap_flexington_row( $attributes ) {
     $align  = '';
-    $gutter = ' gutter-20';
+    $gutter = ' gutter-30';
     // New layouts and templates
     $layouts   = array( 'md-content', 'sm-content', 'xs-content' );
     $templates = array( 'landing.php' );
@@ -42,28 +42,62 @@ function prefix_content_sidebar_wrap_flexington_row( $attributes ) {
         $align  = ' around-xs';
         $gutter = '';
     }
-    $attributes['class'] = $attributes['class'] . ' row' . $align . $gutter;
+
+    $attributes['class'] .= ' row' . $align . $gutter;
+
     return $attributes;
 }
 
 // Add flexington column classes to the content
 add_filter( 'genesis_attr_content', 'prefix_content_flexington_cols' );
 function prefix_content_flexington_cols( $attributes ) {
-    $attributes['class'] = $attributes['class'] . ' col col-xs';
+
+    $classes = ' col col-xs';
+
+    $layout  = genesis_site_layout();
+    if ( 'sidebar-sidebar-content' == $layout ) {
+        $classes .= ' last-lg';
+    }
+
+    $attributes['class'] .= $classes;
     return $attributes;
 }
 
 // Add flexington column classes to the primary sidebar
 add_filter( 'genesis_attr_sidebar-primary', 'prefix_sidebar_primary_flexington_cols' );
 function prefix_sidebar_primary_flexington_cols( $attributes ) {
-    $attributes['class'] = $attributes['class'] . ' col col-xs-12 col-md-4';
+
+    $layouts = array( 'content-sidebar-sidebar', 'sidebar-content-sidebar', 'sidebar-sidebar-content' );
+    $layout  = genesis_site_layout();
+
+    $classes = ' col col-xs-12 col-md-4';
+
+    if ( in_array( $layout, $layouts ) ) {
+        $classes = ' col col-xs-12 col-lg-4';
+    }
+
+    if ( 'sidebar-content' == $layout ) {
+        $classes .= ' first-md';
+    }
+
+    $attributes['class'] .= $classes;
     return $attributes;
 }
 
 // Add flexington column classes to the secondary sidebar
 add_filter( 'genesis_attr_sidebar-secondary', 'prefix_sidebar_secondary_flexington_cols' );
 function prefix_sidebar_secondary_flexington_cols( $attributes ) {
-    $attributes['class'] = $attributes['class'] . ' col col-xs-12 col-md-2';
+
+    $layouts = array( 'sidebar-content-sidebar', 'sidebar-sidebar-content' );
+    $layout  = genesis_site_layout();
+
+    $classes = ' col col-xs-12 col-lg-2';
+
+    if ( in_array( $layout, $layouts ) ) {
+        $classes .= ' first-lg';
+    }
+
+    $attributes['class'] .= $classes;
     return $attributes;
 }
 
@@ -71,9 +105,9 @@ function prefix_sidebar_secondary_flexington_cols( $attributes ) {
 add_action( 'genesis_before', 'prefix_maybe_remove_sidebar' );
 function prefix_maybe_remove_sidebar() {
 
-    $layouts = array( 'md-content', 'sm-content', 'xs-content' );
+    $custom_layouts = array( 'md-content', 'sm-content', 'xs-content' );
 
-    if ( ! in_array( genesis_site_layout(), $layouts ) ) {
+    if ( ! in_array( genesis_site_layout(), $custom_layouts ) ) {
         return;
     }
     // Remove sidebars
