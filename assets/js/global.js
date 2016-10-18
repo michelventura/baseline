@@ -75,8 +75,9 @@ jQuery(function( $ ) {
 jQuery(function ($) {
     'use strict';
     $('.js-superfish').superfish({
-        'delay': 100,
-        'speed': 'fast',
+        'delay': 0,
+        'speed': 100,
+        'speedOut': 0,
         'animation':   {'opacity': 'show', 'height': 'show'},
         'dropShadows': false
     });
