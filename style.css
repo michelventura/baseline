@@ -242,7 +242,7 @@ cite {
 
 .menu .menu-item > a:focus + ul.sub-menu,
 .menu .menu-item.sfHover > ul.sub-menu {
-	left: auto;
+	left: 0;
 	opacity: 1;
 }
 
@@ -1029,7 +1029,7 @@ img#wpstats {
 }
 
 .genesis-nav-menu .menu-item:hover > .sub-menu {
-	left: auto;
+	left: 0;
 	opacity: 1;
 }
 
@@ -1125,12 +1125,8 @@ img#wpstats {
 	border-radius: 0;
 }
 
-.nav-secondary .menu-item:first-of-type {
-	margin-left: auto;
-}
-
-.nav-secondary .menu-item:last-of-type {
-	margin-right: auto;
+.nav-secondary .menu {
+	-ms-flex-pack: center;justify-content: center;
 }
 
 .home .nav-secondary .current-menu-item > a,
