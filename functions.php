@@ -5,7 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Baseline' );
 define( 'CHILD_THEME_URL', 'https://bizbudding.com/' );
-define( 'CHILD_THEME_VERSION', '2.5.5.2' );
+define( 'CHILD_THEME_VERSION', '2.5.5.3' );
 
 // Add HTML5 markup structure
 add_theme_support( 'html5' );
