@@ -30,17 +30,16 @@ function prefix_add_genesis_layouts() {
 }
 
 // Add flexington row classes to the content sidebar wrap
-add_filter( 'genesis_attr_content-sidebar-wrap', 'prefix_content_sidebar_wrap_flexington_row' );
-function prefix_content_sidebar_wrap_flexington_row( $attributes ) {
-    $align  = '';
-    $gutter = ' gutter-30';
-    // New layouts and templates
-    $layouts   = array( 'md-content', 'sm-content', 'xs-content' );
-    $templates = array( 'landing.php' );
-    // Center and remove gutter
-    if ( in_array( genesis_site_layout(), $layouts ) || in_array( basename( get_page_template() ), $templates ) ) {
-        $align  = ' around-xs';
-        $gutter = '';
+add_filter( 'genesis_attr_content-sidebar-wrap', 'inforelay_content_sidebar_wrap_flexington_row' );
+function inforelay_content_sidebar_wrap_flexington_row( $attributes ) {
+    $align  = ' around-xs';
+    $gutter = '';
+    // Sidebar layouts and templates
+    $layouts = array( 'content-sidebar', 'sidebar-content', 'content-sidebar-sidebar', 'sidebar-content-sidebar', 'sidebar-sidebar-content' );
+    // Remove alignment and add gutter
+    if ( in_array( genesis_site_layout(), $layouts ) ) {
+        $align  = '';
+        $gutter = ' gutter-30';
     }
 
     $attributes['class'] .= ' row' . $align . $gutter;
