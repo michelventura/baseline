@@ -3,10 +3,10 @@
  * Description: 		Baseline is a custom child theme for The Genesis Framework.
  * Author: 				Mike Hemberger
  * Author URI: 			http://thestizmedia.com/
- * Version: 			2.5.5.4
+ * Version: 			2.5.5.5
  *
  * Template: 			genesis
- * Baseline 			Version: 2.5.5.4
+ * Baseline 			Version: 2.5.5.5
  *
  * License: 			GPL-2.0+
  * License URI: 		http://www.opensource.org/licenses/gpl-license.php
@@ -996,11 +996,14 @@ img#wpstats {
 
 .genesis-nav-menu .sub-menu {
 	width: 200px;
-	top: 100%;
 	left: -9999px;
 	position: absolute;
 	opacity: 0;
 	z-index: 99;
+}
+
+.genesis-nav-menu .sub-menu {
+	top: 100%;
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
@@ -1008,13 +1011,22 @@ img#wpstats {
 	margin-left: 199px;
 }
 
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+	left: 0;
+	opacity: 1;
+}
+
 .genesis-nav-menu .sub-menu a {
 	position: relative;
+	display: -ms-flexbox;display: flex;
+	-ms-flex-pack: justify;justify-content: space-between;
 	width: 199px;
 	font-size: 14px;
 	word-wrap: break-word;
 	padding: 12px 18px;
-	background-color: #111;
+	margin: 0;
+	background-color: #222;
+	color: rgba(255,255,255,0.6);
 	border: 1px solid rgba(0,0,0,0.1);
 	border-top: none;
 }
@@ -1024,17 +1036,13 @@ img#wpstats {
 }
 
 .genesis-nav-menu .sub-menu a:hover {
-	background-color: #222;
-	color: #fff;
+	background-color: #111;
+	color: rgba(255,255,255,0.9);
 }
 
 .genesis-nav-menu .sub-menu .menu-item-has-children > a::after {
+	-ms-flex-item-align: end;align-self: flex-end;
 	content: "\f105";
-}
-
-.genesis-nav-menu .menu-item:hover > .sub-menu {
-	left: 0;
-	opacity: 1;
 }
 
 /* ## Header Navigation
@@ -1043,6 +1051,9 @@ img#wpstats {
 .home .nav-header .current-menu-item > a,
 .nav-header a {
 	color: #252525;
+}
+
+.nav-header a {
 	padding: 8px 4px;
 	margin: 0 14px;
 }
@@ -1077,10 +1088,6 @@ img#wpstats {
 	color: #067CCC;
 }
 
-.site-header .sub-menu .sub-menu {
-	margin-top: -59px;
-}
-
 /* ## Primary Navigation
 --------------------------------------------- */
 
@@ -1104,17 +1111,6 @@ img#wpstats {
 
 .nav-primary .sub-menu .current-menu-item > a {
 	color: #999;
-}
-
-.nav-primary .sub-menu a {
-}
-
-.nav-primary .sub-menu a:hover,
-.nav-primary .sub-menu .current-menu-item > a,
-.nav-primary .sub-menu .current-menu-item > a:hover {
-}
-
-.nav-primary .sub-menu .current-menu-item > a {
 }
 
 .nav-primary .menu-item.search {
@@ -1147,17 +1143,6 @@ img#wpstats {
 
 .nav-secondary .sub-menu .current-menu-item > a {
 	color: #999;
-}
-
-.nav-secondary .sub-menu a {
-}
-
-.nav-secondary .sub-menu a:hover,
-.nav-secondary .sub-menu .current-menu-item > a,
-.nav-secondary .sub-menu .current-menu-item > a:hover {
-}
-
-.nav-secondary .sub-menu .current-menu-item > a {
 }
 
 /* ## Mobile Navigation - Sidr slide out nav menu
