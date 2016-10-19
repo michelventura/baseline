@@ -1031,7 +1031,7 @@ img#wpstats {
 	border-top: none;
 }
 
-.genesis-nav-menu .sub-menu a:first-of-type {
+.genesis-nav-menu .sub-menu > .menu-item:first-of-type a {
 	border-top: 1px solid rgba(0,0,0,0.1);
 }
 
