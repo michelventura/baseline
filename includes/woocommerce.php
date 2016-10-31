@@ -27,6 +27,29 @@ function prefix_enqueue_woocommerce_scripts() {
 // Remove titles on archive pages
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
+// Add shop page title and description
+add_action( 'genesis_before_loop', 'prefix_do_woocommerce_shop_title' );
+function prefix_do_woocommerce_shop_title() {
+	// Bail if WooCommerce is not active
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		return;
+	}
+	// Bail if not on the Woo Shop page
+    if ( ! is_shop() ) {
+    	return;
+    }
+    // Remove Woo shop page default description
+    remove_action( 'woocommerce_archive_description', 'woocommerce_product_archive_description' );
+    // Get our new data
+    $shop_id 	= get_option( 'woocommerce_shop_page_id' );
+	$post		= get_post( $shop_id );
+	$headline	= $post->post_title;
+	$intro_text = $post->post_content;
+	$headline	= $headline ? sprintf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), strip_tags( $headline ) ) : '';
+	$intro_text = $intro_text ? $intro_text : '';
+    printf( '<div %s>%s</div>', genesis_attr( 'cpt-archive-description' ), $headline . $intro_text );
+}
+
 // Display 24 products per page. Goes in functions.php
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 24;' ), 20 );
 
