@@ -10,7 +10,18 @@ function prefix_enqueue_woocommerce_scripts() {
 	if ( ! class_exists( 'WooCommerce' ) ) {
 		return;
 	}
-	wp_enqueue_style( 'prefix-woocommerce', get_stylesheet_directory_uri() . '/assets/css/woocommerce.css', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'prefix-woocommerce', get_stylesheet_directory_uri() . '/assets/css/woo.css', array(), CHILD_THEME_VERSION );
+
+	// Bail if Cart or Checkout pages. We need layout stuff here
+	if ( is_page( array('cart','checkout') ) ) {
+		return;
+	}
+
+	/**
+	 * Remove Woo layout script
+	 * @link https://gregrickaby.com/remove-woocommerce-styles-and-scripts/
+	 */
+	wp_dequeue_style( 'woocommerce-layout' );
 }
 
 // Remove titles on archive pages
@@ -26,20 +37,3 @@ add_action( 'woocommerce_after_shop_loop', 'genesis_posts_nav', 10 );
 
 // Remove coupons case-insensitive filter
 remove_filter( 'woocommerce_coupon_code', 'strtolower' );
-
-/**
- * Manage WooCommerce styles and scripts.
- * @link https://gregrickaby.com/remove-woocommerce-styles-and-scripts/
- */
-add_action( 'wp_enqueue_scripts', 'prefix_woocommerce_script_cleaner', 99 );
-function prefix_woocommerce_script_cleaner() {
-	// Bail if WooCommerce is not active
-	if ( ! class_exists( 'WooCommerce' ) ) {
-		return;
-	}
-	// Bail if Cart or Checkout pages. We need layout stuff here
-	if ( is_page( array('cart','checkout') ) ) {
-		return;
-	}
-	wp_dequeue_style( 'woocommerce-layout' );
-}
